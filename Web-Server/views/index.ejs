@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webbay</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Datepicker CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<!-- Bootstrap Datepicker Vietnamese language -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.vi.min.js"></script>
+    
+
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
+    <script type="text/javascript">
+      <!--
+         function Redirect() {
+            window.location="/check-user";
+         }
+      //-->
+    </script>
+
+</head>
+<body>
+<header style="position: relative">
+    <div class="w3-top" id="home">
+        <div class="w3-bar  w3-card w3-left-align w3-large heeder-large-screen" style="background-color: #000015">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-hover-black"><img class="logo" src="../image/logoptit.jpg" alt="logo" /></a>
+            <div>
+
+                <a href="/index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Trang chủ</a>
+                <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Giới thiệu</a>
+                <a href="/signin" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Đăng Kí</a>
+                <a href="/support/none" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Hướng dẫn thanh toán</a>
+            </div>
+        </div>
+        <div id="navDemo" class="w3-bar-block w3-hide w3-hide-medium w3-hide-large w3-large">
+
+            <a href="#Home" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Trang chủ</a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Giới thiệu</a>
+            <a href="login.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Đăng Nhập</a>
+            <a href="signin.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Đăng Kí</a>
+            <a href="support.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Hướng dẫn thanh toán</a>
+        </div>
+    </div>
+</header>
+
+<section
+      class="login-section"
+      style="background-image: url('path-to-your-background-image.jpg')"
+    >
+      <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        <form class="login-form" id="form-2" action="/check-user" method="post">
+          <div class="input-group">
+            <label for="login-email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="login-email"
+              name="email"
+              placeholder="VD: sivu@gmail.com"
+            />
+            <span class="form-message"></span>
+          </div>
+          <div class="input-group">
+            <label for="login-password">Mật khẩu</label>
+            <input
+              type="password"
+              class="form-control"
+              id="login-password"
+              name="passwords"
+            />
+            <span class="form-message"></span>
+          </div>
+          <div class="forgot-password">
+            <a href="#">Quên mật khẩu?</a>
+          </div>
+          <button type="submit">ĐĂNG NHẬP</button>
+        </form>
+        <div class="register-link">
+          <p>Chưa có tài khoản? <a href="#">Đăng ký</a></p>
+        </div>
+      </div>
+    </section>
+<section  class="intro">
+  <div class="hero" id="about">
+    <div class="hero-description">
+      <div class="hero-text">
+       <h1 class="hero-title">Giới thiệu về PTIT Airlines</h1>
+       <p class="p-long">
+        <em><strong>
+          Chào mừng đến với PTIT Airlines, nơi thắp sáng ước mơ học tập và khám phá bầu trời cho hàng ngàn thế hệ sinh viên PTIT. Với sứ mệnh trở thành cầu nối giữa kiến thức và ước mơ, PTIT Airlines tự hào mang đến cho bạn cơ hội trải nghiệm những chuyến bay ấn tượng với giá cả phải chăng, phục vụ đúng tinh thần và nhu cầu của sinh viên.
+        </strong></em>
+      </p >
+    </p >
+    <p >
+      Dự án này là thành quả của bài tập lớn môn học, được thực hiện bởi nhóm sinh viên năm 3 gồm 6 thành viên tài năng từ PTIT, những người đã không ngừng nỗ lực để tạo ra một trang web bán vé máy bay thân thiện, dễ sử dụng. Chúng tôi hiểu rằng, đối với sinh viên, việc tìm kiếm và đặt vé máy bay với một mức giá hợp lý là vô cùng quan trọng. Vì vậy, PTIT Airlines cam kết cung cấp một dịch vụ tiện lợi, an toàn, và tiết kiệm, giúp bạn dễ dàng lên kế hoạch cho những chuyến đi của mình.
+    </p>
+    <p>
+      Tại PTIT Airlines, chúng tôi không chỉ cung cấp vé máy bay. Chúng tôi còn giúp mở rộng tầm nhìn, kiến thức, kinh nghiệm và trải nghiệm của sinh viên thông qua việc khám phá các vùng đất mới. Với một giao diện thân thiện, trực quan, cùng với hệ thống tìm kiếm và đặt vé linh hoạt, PTIT Airlines hứa hẹn sẽ là người bạn đồng hành đáng tin cậy trên mỗi hành trình của bạn.
+    </p>
+    <p>
+      Hãy để PTIT Airlines là nơi thắp cánh cho ước mơ của bạn, kết nối bạn với thế giới bên ngoài, và trở thành phần không thể thiếu trong hành trình học tập và phát triển của mình. Chúng tôi rất mong được chào đón và phục vụ bạn trên những chuyến bay tiếp theo!
+    </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="vietnam-airlines-section">
+  <div class="section-wrapper">
+    <div class="section-inner">
+      <div class="content-wrapper">
+        <div class="content-inner">
+          <div class="image-wrapper">
+            <div class="image-inner">
+              <img
+                src="https://www.vietnamairlines.com/~/media/Images/VNANew/Footer/4-Star_Metallic_150x150.png?la=vi-VN"
+                alt="Vietnam Airlines is proud to be a leading 4-star global airline"
+              />
+            </div>
+            <div class="text-content">
+              <h4>
+                PTIT Airlines tự hào là Hãng hàng không quốc tế 4 sao
+              </h4>
+              <p>PTIT Airlines là nơi thắp cánh ước mơ cho bao thế hệ sinh viên PTIT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="contact-section">
+  <div class="row">
+    <div class="col span-1-of-3">
+      <ul class="information">
+        <li>
+          <i class="fas fa-map-marker-alt small-icon"></i>Address: Km10,
+          Đường Nguyễn Trãi, Q.Hà Đông, Hà Nội
+        </li>
+        <li>
+          <i class="fas fa-envelope small-icon"></i>Email:
+          SiVV.B21VT378@stu.ptit.edu.vn
+        </li>
+        <li><i class="fas fa-phone small-icon"></i>SĐT: (+84)0817952741</li>
+      </ul>
+      <ul class="social-icons">
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-twitter-square"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+        <li><i class="fab fa-google-plus-square"></i></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Copyright &copy; 2024 by Vu Van Si</p>
+</footer>
+<script>
+  function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+<script>
+  // Tabs
+  function openLink(evt, linkName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("myLink");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(linkName).style.display = "block";
+    evt.currentTarget.className += " w3-red";
+  }
+  0
+  // Click on the first tablink on load
+  document.getElementsByClassName("tablink")[0].click();
+  </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault(); 
+            var target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+              target.scrollIntoView({
+                behavior: 'smooth', 
+                block: 'start' 
+              });
+            }
+          });
+        });
+      });
+    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("login-email");
+    const passwordInput = document.getElementById("login-password");
+
+    // Validation as the user types or moves out of the input field
+    emailInput.addEventListener("input", validateEmailField);
+    passwordInput.addEventListener("input", validatePasswordField);
+
+    function validateEmailField() {
+      const emailMessage = emailInput.nextElementSibling;
+      if (!validateEmail(emailInput.value)) {
+        emailMessage.textContent =
+          "Email không hợp lệ. Ví dụ: sivu@gmail.com";
+      } else {
+        emailMessage.textContent = "";
+      }
+    }
+
+    function validatePasswordField() {
+      const passwordMessage = passwordInput.nextElementSibling;
+      if (!validatePassword(passwordInput.value)) {
+        passwordMessage.textContent =
+          "Mật khẩu phải có ít nhất 6 ký tự và bao gồm cả chữ và số.";
+      } else {
+        passwordMessage.textContent = "";
+      }
+    }
+
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+
+    function validatePassword(password) {
+      const minLength = 6;
+      const hasLetter = /[a-zA-Z]/.test(password);
+      const hasNumber = /\d/.test(password);
+      return password.length >= minLength && hasLetter && hasNumber;
+    }
+  });
+</script>
+<script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error === 'invalid') {
+      alert('Tài khoản không tồn tại vui lòng nhập lại');
+    }
+    if (error === 'invalid1') {
+      alert('Tài khoản hoặc mật khẩu không chính xác, vui lòng nhập lại');
+    }
+    if (error === "createuser") {
+      alert("Đăng ký thành công");
+  }
+}
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sửa chuyến bay</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Datepicker CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.vi.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../public/css/update.css" />
+  </head>
+  <body>
+    <header style="position: relative">
+      <div class="w3-top" id="home">
+        <div
+          class="w3-bar w3-card w3-left-align w3-large heeder-large-screen"
+          style="background-color: #000015"
+        >
+          <a
+            class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black"
+            onclick="myFunction()"
+            title="Toggle Navigation Menu"
+            ><i class="fa fa-bars"></i
+          ></a>
+          <a
+            href="#home"
+            class="w3-bar-item w3-button w3-padding-large w3-hover-black"
+            ><img class="logo" src="../image/logoptit.jpg" alt="logo"
+          /></a>
+          <div>
+            <a
+              href="#Home"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black"
+              >Trang chủ</a
+            >
+            <a
+              href="login.html"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black"
+              >Đăng Nhập</a
+            >
+            <a
+              href="signin.html"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black"
+              >Đăng Kí</a
+            >
+            <a
+              href="support.html"
+              class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black"
+              >Hướng dẫn thanh toán</a
+            >
+          </div>
+          <div class="w3-bar-item w3-padding-large" style="float: right">
+            <div style="margin-right: 20px">
+              <a
+                href="tel:19001250"
+                class="phone-number"
+                style="text-decoration: none; color: #fff"
+              >
+                <i class="fas fa-phone"></i>
+                1900 1250
+              </a>
+              <!-- User Dropdown Menu Start -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle user-info"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                  "
+                >
+                  <i class="fas fa-user-circle" style="margin-right: 5px"></i>
+                  Manager
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuLink"
+                  style="right: 0; left: auto"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="fas fa-user"></i> Đăng xuất</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- User Dropdown Menu End -->
+            </div>
+          </div>
+        </div>
+        <div
+          id="navDemo"
+          class="w3-bar-block w3-hide w3-hide-medium w3-hide-large w3-large"
+        >
+          <a
+            href="#Home"
+            class="w3-bar-item w3-button w3-padding-large"
+            onclick="myFunction()"
+            >Trang chủ</a
+          >
+          <a
+            href="login.html"
+            class="w3-bar-item w3-button w3-padding-large"
+            onclick="myFunction()"
+            >Đăng Nhập</a
+          >
+          <a
+            href="signin.html"
+            class="w3-bar-item w3-button w3-padding-large"
+            onclick="myFunction()"
+            >Đăng Kí</a
+          >
+          <a
+            href="support.html"
+            class="w3-bar-item w3-button w3-padding-large"
+            onclick="myFunction()"
+            >Hướng dẫn thanh toán</a
+          >
+          <div class="w3-bar-item w3-padding-large" style="float: right">
+            <div style="margin-right: 20px">
+              <a
+                href="tel:19001250"
+                class="phone-number"
+                style="text-decoration: none; color: #fff"
+              >
+                <i class="fas fa-phone"></i>
+                1900 1250
+              </a>
+              <!-- User Dropdown Menu Start -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle user-info"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    text-decoration: none;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                  "
+                >
+                  <i class="fas fa-user-circle" style="margin-right: 5px"></i>
+                  Manager
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuLink"
+                  style="right: 0; left: auto"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="fas fa-user"></i> Thông tin tài khoản</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- User Dropdown Menu End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="flight-management-section">
+      <div class="container mt-4" id="flight-info">
+        <h3>Thông Tin Chuyến Bay</h3>
+        <p id="info-content"></p>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="them-chuyen-bay-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#them-chuyen-bay"
+              type="button"
+              role="tab"
+              aria-controls="them-chuyen-bay"
+              aria-selected="true"
+            >
+              Sửa Chuyến Bay
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="them-chuyen-bay"
+            role="tabpanel"
+            aria-labelledby="them-chuyen-bay-tab"
+          >
+            <h2>Sửa Chuyến Bay</h2>
+            <form id="flight-form" action="/update-product" method="post">
+              <div class="mb-none">
+                <label for="flight-number" class="form-label">Id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="flight-number"
+                  name="id"
+                  value="<%= productUpdate.id %>"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="departure-location" class="form-label"
+                  >Điểm đi:</label
+                >
+                <input
+                  type="text"
+                  class="custom-input custom-border form-control dropdown-toggle"
+                  id="departure-location"
+                  name="adr_start"
+                  data-bs-toggle="dropdown"
+                  placeholder="Hà Nội"
+                  aria-label="Tìm thành phố"
+                  value="<%= productUpdate.adr_start %>"
+                />
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0);"
+                      onclick="selectDeparture('Hà Nội')"
+                      >Hà Nội</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0);"
+                      onclick="selectDeparture('Tp Hồ Chí Minh')"
+                      >Tp Hồ Chí Minh</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0);"
+                      onclick="selectDeparture('Đà Nẵng')"
+                      >Đà Nẵng</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mb-3">
+                <label for="arrival-location" class="form-label"
+                  >Điểm đến:</label
+                >
+                <input
+                  type="text"
+                  class="custom-input custom-border form-control dropdown-toggle"
+                  id="arrival-location"
+                  name="adr_end"
+                  data-bs-toggle="dropdown"
+                  placeholder="Tp Hồ Chí Minh"
+                  aria-label="Tìm thành phố"
+                  value="<%= productUpdate.adr_end %>"
+                />
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0);"
+                      onclick="selectArrival('Hà Nội')"
+                      >Hà Nội</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0);"
+                      onclick="selectArrival('Tp Hồ Chí Minh')"
+                      >Tp Hồ Chí Minh</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="javascript:void(0);"
+                      onclick="selectArrival('Đà Nẵng')"
+                      >Đà Nẵng</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mb-3">
+                <label for="flight-number" class="form-label"
+                  >Mã chuyến bay:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="flight-number"
+                  name="code"
+                  value="<%= productUpdate.code %>"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="departure-date" class="form-label"
+                  >Ngày xuất phát (Ngày/tháng/năm - dd/mm/yyyy):</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="departure-date"
+                  name="day_start"
+                  value="<%= productUpdate.day_start %>"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="departure" class="form-label">Giờ khởi hành:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="departure"
+                  name="time_start"
+                  value="<%= productUpdate.time_start %>"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="arrival" class="form-label">Thời gian đến:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="arrival"
+                  name="time_end"
+                  value="<%= productUpdate.time_end %>"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Giá vé:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  placeholder="Giá vé (VND)"
+                  value="<%= productUpdate.price %>"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Lưu</button>
+            </form>
+            <div class="flight-list mt-4">
+              <h3>Danh Sách Chuyến Bay</h3>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Số thứ tự</th>
+                    <th scope="col">Điểm đi</th>
+                    <th scope="col">Điểm đến</th>
+                    <th scope="col">Số hiệu chuyến bay</th>
+                    <th scope="col">Ngày xuất phát</th>
+                    <th scope="col">Giờ khởi hành</th>
+                    <th scope="col">Giá vé</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Dữ liệu hàng sẽ được thêm vào đây -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="row">
+        <div class="col span-1-of-3">
+          <ul class="information">
+            <li>
+              <i class="fas fa-map-marker-alt small-icon"></i>Address: Km10,
+              Đường Nguyễn Trãi, Q.Hà Đông, Hà Nội
+            </li>
+            <li>
+              <i class="fas fa-envelope small-icon"></i>Email:
+              SiVV.B21VT378@stu.ptit.edu.vn
+            </li>
+            <li><i class="fas fa-phone small-icon"></i>SĐT: (+84)0817952741</li>
+          </ul>
+          <ul class="social-icons">
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-twitter-square"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-google-plus-square"></i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>Copyright &copy; 2024 by Vu Van Si</p>
+    </footer>
+    <script>
+      // Used to toggle the menu on small screens when clicking on the menu button
+      function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+    <script>
+      function selectDeparture(city) {
+        // Cập nhật giá trị cho input 'departure-location' với giá trị được chọn
+        document.getElementById("departure-location").value = city;
+        // Thêm bất kỳ logic xử lý nào khác ở đây nếu cần
+      }
+
+      function selectArrival(city) {
+        // Cập nhật giá trị cho input 'arrival-location' với giá trị được chọn
+        document.getElementById("arrival-location").value = city;
+        // Thêm bất kỳ logic xử lý nào khác ở đây nếu cần
+      }
+    </script>
+    <script></script>
+  </body>
+</html>
