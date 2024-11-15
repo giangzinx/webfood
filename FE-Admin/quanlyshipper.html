@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ADMIN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <style>
+            .spacing {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="preloader">
+            <div class="preloader-area">
+                <div class="preloader-box">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+        </div>
+        <header class="header-section">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><b>PTIT</b></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="/index.html">Quản lý người dùng</a></li>
+                            <li><a href="/quanlynhahang.html">Quản lý nhà hàng</a></li>
+                            <li><a href="#">Quản lý shipper</a></li>
+                            <li><a href="#">Trạng thái</a></li>
+                            <li><a href="#">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="row subscribe-from">
+                    <div class="col-md-12">
+                        <form class="form-inline col-md-12 wow fadeInDown animated">
+                            <div class="form-group">
+                                <input type="email" class="form-control subscribe" id="email" placeholder="Search...">
+                                <button class="suscribe-btn"><i class="pe-7s-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slider-section">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators slider-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </section>
+        <section class="shipper-management">
+            <div class="container">
+                <h2>Quản lý shipper</h2>
+                <form id="shipperForm">
+                    <div class="form-group">
+                        <label for="shipperName">Tên shipper:</label>
+                        <input type="text" id="shipperName" class="form-control" placeholder="Nhập tên shipper">
+                    </div>
+                    <div class="form-group">
+                        <label for="shipperPhone">Số điện thoại:</label>
+                        <input type="text" id="shipperPhone" class="form-control" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="shipperEmail">Email:</label>
+                        <input type="email" id="shipperEmail" class="form-control" placeholder="Nhập email">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="addShipper()">Thêm</button>
+                </form>
+                <div id="emailError" style="display: none; color: red;">Email không hợp lệ. Vui lòng nhập lại.</div>
+                <div id="notification" style="display: none; color: green;">Shipper đã được thêm thành công!</div>
+                <div class="panel panel-default spacing">
+                    <div class="panel-heading">Danh sách shipper</div>
+                    <div class="panel-body">
+                        <table id="shipperTable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tên shipper</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shipperList">
+                                <!-- Danh sách shipper sẽ hiển thị ở đây -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/custom.js"></script>
+        <script src="js/shipper.js"></script>
+    </body>
+</html>
