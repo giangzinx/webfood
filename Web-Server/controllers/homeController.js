@@ -52,7 +52,29 @@ const postCheckCustomer = async (req, res) => {
     return res.status(500).send("Internal Server Error");
   }
 };
-
+const postCreateCustomer = async (req, res) => {
+  let check = req.body.check;
+  let phonenumber = req.body.phonenumber;
+  let name = req.body.name;
+  let password = req.body.password;
+  let sql = "SELECT * FROM Customer WHERE phonenumber = ?";
+  const [rows] = await connection.query(sql, [phonenumber]);
+  console.log(rows);
+  if (rows.length <= 0) {
+    let [results, fields] = await connection.query(
+      `INSERT INTO Customer (phonenumber,password,name)
+        VALUES(?,?,?);`,
+      [phonenumber, password, name]
+    );
+    console.log(">>> check results: ", results);
+    if (check == "1") return res.redirect("/admin?error=createcustomer");
+    else return res.redirect("/index?error=createcustomer");
+    return;
+  } else {
+    if (check == "1") return res.redirect("/admin?error=createcustomerfail");
+    else return res.redirect("/index?error=createcustomerfail");
+  }
+};
 // const getlogin
 module.exports = {
   getindex,

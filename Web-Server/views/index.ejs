@@ -228,6 +228,7 @@
               <div class="form-login p-4">
                 <form
                   class="login-form"
+                  id="form-1"
                   action="/create-customer"
                   method="post"
                 >
@@ -242,6 +243,7 @@
                       <input
                         type="tel"
                         class="form-control"
+                        name="phonenumber"
                         id="registerPhone"
                         placeholder="Nhập số điện thoại"
                         required
@@ -259,6 +261,7 @@
                       <input
                         type="text"
                         class="form-control"
+                        name="name"
                         id="registerName"
                         placeholder="Nhập họ và tên"
                         required
@@ -276,6 +279,7 @@
                       <input
                         type="password"
                         class="form-control"
+                        name="password"
                         id="registerPassword"
                         placeholder="Nhập mật khẩu"
                         required
@@ -293,6 +297,7 @@
                       <input
                         type="password"
                         class="form-control"
+                        name="confirmPassword"
                         id="confirmPassword"
                         placeholder="Nhập lại mật khẩu"
                         required
@@ -2702,7 +2707,103 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../public/vendors/fontawesome/all.min.js"></script>
     <script src="../public/js/theme.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("form-1");
+        const phoneInput = document.getElementById("registerPhone");
+        const nameInput = document.getElementById("registerName");
+        const passwordInput = document.getElementById("registerPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const phoneMessage = document.querySelector(
+          "#registerPhone + .form-message"
+        );
+        const passwordMessage = document.querySelector(
+          "#registerPassword + .form-message"
+        );
+        const confirmPasswordMessage = document.querySelector(
+          "#confirmPassword + .form-message"
+        );
+        const submitButton = form.querySelector('button[type="submit"]');
 
+        // Validate số điện thoại
+        const validatePhoneNumber = (phone) => {
+          if (!phone.match(/^\d{10}$/)) {
+            if (phoneMessage)
+              phoneMessage.textContent =
+                "Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số.";
+            return false;
+          }
+          if (phoneMessage) phoneMessage.textContent = "";
+          return true;
+        };
+
+        // Validate mật khẩu
+        const validatePassword = (password) => {
+          if (
+            !(
+              password.length >= 6 &&
+              /[a-zA-Z]/.test(password) &&
+              /\d/.test(password)
+            )
+          ) {
+            if (passwordMessage)
+              passwordMessage.textContent =
+                "Mật khẩu phải có ít nhất 6 ký tự và bao gồm cả chữ và số.";
+            return false;
+          }
+          if (passwordMessage) passwordMessage.textContent = "";
+          return true;
+        };
+
+        // Kiểm tra mật khẩu xác nhận
+        const checkPasswordsMatch = () => {
+          if (passwordInput.value !== confirmPasswordInput.value) {
+            if (confirmPasswordMessage)
+              confirmPasswordMessage.textContent =
+                "Mật khẩu xác nhận không khớp. Vui lòng nhập lại.";
+            return false;
+          }
+          if (confirmPasswordMessage) confirmPasswordMessage.textContent = "";
+          return true;
+        };
+
+        // Cập nhật trạng thái của nút submit
+        const updateSubmitButtonState = () => {
+          const isValid =
+            validatePhoneNumber(phoneInput.value) &&
+            validatePassword(passwordInput.value) &&
+            checkPasswordsMatch();
+          submitButton.disabled = !isValid;
+          if (!isValid) {
+            submitButton.classList.add("button-disabled");
+          } else {
+            submitButton.classList.remove("button-disabled");
+          }
+        };
+
+        // Lắng nghe các thay đổi trong form
+        form.addEventListener("input", updateSubmitButtonState);
+      });
+    </script>
+
+    <script>
+      window.onload = function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get("error");
+        if (error === "invalid") {
+          alert("Tài khoản không tồn tại vui lòng nhập lại");
+        }
+        if (error === "invalid1") {
+          alert("Tài khoản hoặc mật khẩu không chính xác, vui lòng nhập lại");
+        }
+        if (error === "createcustomer") {
+          alert("Đăng ký thành công");
+        }
+        if (error === "createcustomerfail") {
+          alert("Tài khoản đã tồn tại");
+        }
+      };
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
       rel="stylesheet"
