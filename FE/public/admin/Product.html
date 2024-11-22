@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đơn hàng</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/img/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/img/favicons/favicon-32x32.png  "
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/img/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/favicons/favicon.ico"
+    />
+    <link rel="manifest" href="../assets/img/favicons/manifest.json" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets/img/favicons/mstile-150x150.png"
+    />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link href="./css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="main" id="top">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+        data-navbar-on-scroll="data-navbar-on-scroll"
+      >
+        <div class="container">
+          <a class="navbar-brand d-inline-flex" href="index.html"
+            ><img
+              class="d-inline-block"
+              src="../assets/img/gallery/logo.svg"
+              alt="logo"
+            /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient"
+              >Ship PTIT</span
+            ></a
+          >
+          <div
+            class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0"
+            id="navbarSupportedContent"
+          >
+            <div
+              class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block"
+            ></div>
+            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+              <!-- Replace existing button with this dropdown -->
+              <div class="dropdown">
+                <button
+                  type="button"
+                  class="btn btn-white shadow-warning text-warning dropdown-toggle"
+                  id="userDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="User menu"
+                >
+                  <i class="fas fa-user me-2"></i>Admin
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end py-2"
+                  aria-labelledby="userDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-user-circle me-2"></i>Thông tin tài khoản
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-cog me-2"></i>Cài đặt
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a
+                      class="dropdown-item text-danger"
+                      href="../index.html"
+                      onclick="handleLogout()"
+                    >
+                      <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- Add this right after the <nav> element -->
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fas fa-users me-2"></i>
+                    Người dùng
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    Quản lý sản phẩm
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fas fa-truck me-2"></i>
+                    Giao hàng
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    Đơn hàng
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Main content area -->
+      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+        >
+          <h1 class="h2">Danh sách món ăn</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addFoodModal"
+            >
+              <i class="fas fa-plus"></i> Thêm món ăn
+            </button>
+          </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Tìm kiếm món ăn..."
+            />
+          </div>
+          <div class="col-md-3">
+            <select class="form-select">
+              <option value="">Tất cả loại món</option>
+              <option value="banhmi">Bánh mì</option>
+              <option value="bun">Bún</option>
+              <option value="com">Cơm</option>
+              <option value="goi">Gỏi</option>
+              <option value="pho">Phở</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Food Items Table -->
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Tên món ăn</th>
+                <th>Giá (VND)</th>
+                <th>Loại món</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Bánh mì -->
+              <tr class="table-light">
+                <td colspan="5"><strong>Bánh mì</strong></td>
+              </tr>
+              <tr>
+                <td>Bánh mì thịt nướng</td>
+                <td>15,000</td>
+                <td>Bánh mì</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bánh mì thịt nướng</td>
+                <td>15,000</td>
+                <td>Bánh mì</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bánh mì thịt bò</td>
+                <td>20,000</td>
+                <td>Bánh mì</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bánh mì gà rán</td>
+                <td>20,000</td>
+                <td>Bánh mì</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bánh mì trứng</td>
+                <td>10,000</td>
+                <td>Bánh mì</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <!-- Bún -->
+              <tr class="table-light">
+                <td colspan="5"><strong>Bún</strong></td>
+              </tr>
+              <tr>
+                <td>Bún chả</td>
+                <td>35,000</td>
+                <td>Bún</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bún cá</td>
+                <td>40,000</td>
+                <td>Bún</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bún bò</td>
+                <td>30,000</td>
+                <td>Bún</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr class="table-light">
+                <td colspan="5"><strong>Cơm</strong></td>
+              </tr>
+              <tr>
+                <td>Cơm tấm</td>
+                <td>35,000</td>
+                <td>Cơm</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Cơm gà</td>
+                <td>30,000</td>
+                <td>cơm</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Cơm thố</td>
+                <td>40,000</td>
+                <td>Cơm</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Cơm rang</td>
+                <td>25,000</td>
+                <td>Cơm</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Gỏi nhệch</td>
+                <td>50,000</td>
+                <td>Gỏi</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Gỏi sứa</td>
+                <td>75,000</td>
+                <td>Gỏi</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Gỏi tôm</td>
+                <td>65,000</td>
+                <td>Gỏi</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Phở bò</td>
+                <td>40,000</td>
+                <td>Phở</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Phở thìn</td>
+                <td>80,000</td>
+                <td>Phở</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Phở gà</td>
+                <td>35,000</td>
+                <td>Phở</td>
+                <td>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked />
+                    <label class="form-check-label text-success"
+                      >Còn hàng</label
+                    >
+                  </div>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-primary me-1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <!-- Repeat similar structure for Cơm, Gỏi, and Phở categories -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Add Food Modal -->
+      <div class="modal fade" id="addFoodModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thêm món ăn mới</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="addFoodForm">
+                <!-- Form fields from previous example -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.querySelectorAll(".form-check-input").forEach((checkbox) => {
+          checkbox.addEventListener("change", function () {
+            const label = this.nextElementSibling;
+            if (this.checked) {
+              label.textContent = "Còn hàng";
+              label.classList.remove("text-danger");
+              label.classList.add("text-success");
+            } else {
+              label.textContent = "Hết hàng";
+              label.classList.remove("text-success");
+              label.classList.add("text-danger");
+            }
+          });
+        });
+      </script>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="../vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </body>
+</html>
