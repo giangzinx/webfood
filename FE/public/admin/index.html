@@ -7,36 +7,36 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../public/img/favicons/apple-touch-icon.png"
+      href="../assets/img/favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../public/img/favicons/favicon-32x32.png  "
+      href="../assets/img/favicons/favicon-32x32.png  "
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../public/img/favicons/favicon-16x16.png"
+      href="../assets/img/favicons/favicon-16x16.png"
     />
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../public/img/favicons/favicon.ico"
+      href="../assets/img/favicons/favicon.ico"
     />
-    <link rel="manifest" href="../public/img/favicons/manifest.json" />
+    <link rel="manifest" href="../assets/img/favicons/manifest.json" />
     <meta
       name="msapplication-TileImage"
-      content="../public/img/favicons/mstile-150x150.png"
+      content="../assets/img/favicons/mstile-150x150.png"
     />
-    <link href="../public/css/theme.css" rel="stylesheet" />
+    <link href="../assets/css/theme.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link href="../public/css/admin.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
   </head>
   <body>
     <main class="main" id="top">
@@ -45,10 +45,10 @@
         data-navbar-on-scroll="data-navbar-on-scroll"
       >
         <div class="container">
-          <a class="navbar-brand d-inline-flex" href="/admin"
+          <a class="navbar-brand d-inline-flex" href="index.html"
             ><img
               class="d-inline-block"
-              src="../public/img/gallery/logo.svg"
+              src="../assets/img/gallery/logo.svg"
               alt="logo"
             /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient"
               >Ship PTIT</span
@@ -92,7 +92,7 @@
                   <li>
                     <a
                       class="dropdown-item text-danger"
-                      href="/index"
+                      href="../index.html"
                       onclick="handleLogout()"
                     >
                       <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
@@ -112,15 +112,9 @@
             <div class="position-sticky pt-3">
               <ul class="nav flex-column">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/admin">
+                  <a class="nav-link active" href="#">
                     <i class="fas fa-users me-2"></i>
                     Người dùng
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="/admin-product">
-                    <i class="fas fa-shopping-cart me-2"></i>
-                    Quản lý sản phẩm
                   </a>
                 </li>
                 <li class="nav-item">
@@ -130,7 +124,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin-order">
+                  <a class="nav-link" href="#">
                     <i class="fas fa-shopping-cart me-2"></i>
                     Đơn hàng
                   </a>
@@ -152,23 +146,8 @@
                   </h5>
                 </div>
                 <div class="card-body">
-                  <form
-                    id="addUserForm"
-                    action="/create-customer"
-                    method="post"
-                  >
+                  <form id="addUserForm">
                     <div class="row g-3">
-                      <div class="mb-none">
-                        <label for="username" class="form-label">Check</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="check"
-                          name="check"
-                          value="1"
-                          ;
-                        />
-                      </div>
                       <div class="col-md-4">
                         <label for="username" class="form-label"
                           >Tên người dùng</label
@@ -177,7 +156,6 @@
                           type="text"
                           class="form-control"
                           id="username"
-                          name="name"
                           required
                         />
                       </div>
@@ -189,7 +167,6 @@
                           type="tel"
                           class="form-control"
                           id="phone"
-                          name="phonenumber"
                           required
                         />
                       </div>
@@ -202,7 +179,6 @@
                             type="password"
                             class="form-control"
                             id="password"
-                            name="password"
                             required
                           />
                           <button
@@ -244,37 +220,30 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <% listCustomers.forEach(function(customer) { %>
                         <tr>
-                          <td><%= userId++ %></td>
-                          <td><%= customer.name %></td>
-                          <td><%= customer.phonenumber %></td>
-                          <td><%= customer.password %></td>
+                          <td>1</td>
+                          <td>Nguyễn Văn A</td>
+                          <td>0123456789</td>
+                          <td>••••••••</td>
                           <td>
                             <button
                               class="btn btn-sm btn-warning me-2"
-                              onclick="openEditUserModal('<%= customer.customer_id %>', '<%= customer.name %>', '<%= customer.phonenumber %>', '<%= customer.password %>')"
+                              onclick="openEditUserModal('userId')"
                             >
                               <i class="fas fa-edit"></i> Sửa
                             </button>
-                            <form
-                              action="/delete-customer/<%= customer.customer_id %>"
-                              method="post"
-                            >
-                              <button class="btn btn-sm btn-danger">
-                                <i class="fas fa-trash"></i> Xóa
-                              </button>
-                            </form>
+                            <button class="btn btn-sm btn-danger">
+                              <i class="fas fa-trash"></i> Xóa
+                            </button>
                           </td>
                         </tr>
-                        <% }); %>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
               <!-- Add this modal markup at the end of body tag -->
-              <div class="modal fade" id="editUserModal" tabadmin="-1">
+              <div class="modal fade" id="editUserModal" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -360,10 +329,10 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../public/vendors/is/is.min.js"></script>
+    <script src="../vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../public/vendors/fontawesome/all.min.js"></script>
-    <script src="../public/js/theme.js"></script>
+    <script src="../vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
@@ -389,59 +358,25 @@
         });
     </script>
     <script>
-      function openEditUserModal(userId, name, phone, password) {
-        // Populate the form fields with user data
-        document.getElementById("editUserId").value = userId;
-        document.getElementById("editUsername").value = name;
-        document.getElementById("editPhone").value = phone;
-        document.getElementById("editPassword").value = password;
-
-        // Show the modal
+      // Add this JavaScript
+      function openEditUserModal(userId) {
         const modal = new bootstrap.Modal(
           document.getElementById("editUserModal")
         );
+        // TODO: Fetch user data based on userId and populate form
+        document.getElementById("editUserId").value = userId;
         modal.show();
       }
+
       function saveUserEdit() {
-        const customer_id = document.getElementById("editUserId").value;
-        const name = document.getElementById("editUsername").value;
-        const phonenumber = document.getElementById("editPhone").value;
-        const password = document.getElementById("editPassword").value;
-
-        // Tạo object chứa dữ liệu người dùng
-        const userData = {
-          customer_id: customer_id,
-          name: name,
-          phonenumber: phonenumber,
-          password: password,
-        };
-
-        // Gửi dữ liệu đến server
-        fetch(`/update-customer/${customer_id}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.success) {
-              alert("Cập nhật thành công!");
-              location.reload(); // Tải lại trang để cập nhật danh sách
-            } else {
-              alert("Có lỗi xảy ra: " + data.message);
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-
-        // Đóng modal
-        const modal = bootstrap.Modal.getInstance(
-          document.getElementById("editUserModal")
-        );
-        modal.hide();
+        const form = document.getElementById("editUserForm");
+        if (form.checkValidity()) {
+          // TODO: Save edited user data
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("editUserModal")
+          );
+          modal.hide();
+        }
       }
 
       // Password toggle functionality
@@ -461,37 +396,6 @@
             icon.classList.add("fa-eye");
           }
         });
-    </script>
-    <script>
-      window.onload = function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const error = urlParams.get("error");
-        console.log("Error parameter: ", error);
-        if (error === "createcustomer") {
-          alert("Thêm người dùng thành công");
-          setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
-          }, 1000);
-        }
-        if (error === "updatecustomer") {
-          alert("Cập nhật người dùng thành công");
-          setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
-          }, 1000);
-        }
-        if (error === "deletecustomer") {
-          alert("Xóa người dùng thành công");
-          setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
-          }, 1000);
-        }
-        if (error === "createcustomerfail") {
-          alert("Email đã tồn tại, vui lòng nhập lại");
-          setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
-          }, 1000);
-        }
-      };
     </script>
   </body>
 </html>

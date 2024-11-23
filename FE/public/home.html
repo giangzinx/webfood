@@ -16,38 +16,38 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../public/img/favicons/apple-touch-icon.png"
+      href="assets/img/favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../public/img/favicons/favicon-32x32.png"
+      href="assets/img/favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../public/img/favicons/favicon-16x16.png"
+      href="assets/img/favicons/favicon-16x16.png"
     />
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="../public/img/favicons/favicon.ico"
+      href="assets/img/favicons/favicon.ico"
     />
-    <link rel="manifest" href="../public/img/favicons/manifest.json" />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
     <meta
       name="msapplication-TileImage"
-      content="../public/img/favicons/mstile-150x150.png"
+      content="assets/img/favicons/mstile-150x150.png"
     />
     <!-- Auth Scripts -->
-    <script src="../public/js/auth/auth.js"></script>
+    <script src="assets/js/auth/auth.js"></script>
     <meta name="theme-color" content="#ffffff" />
 
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
-    <link href="../public/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -63,7 +63,7 @@
           <a class="navbar-brand d-inline-flex" href="index.html"
             ><img
               class="d-inline-block"
-              src="../public/img/gallery/logo.svg"
+              src="assets/img/gallery/logo.svg"
               alt="logo"
             /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient"
               >Ship PTIT</span
@@ -103,37 +103,30 @@
                 />
               </div>
               <!-- Replace existing button with this dropdown -->
-              <div class="dropdown">
-                <button
-                  class="btn btn-white shadow-warning text-warning dropdown-toggle"
-                  type="button"
-                  id="userDropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-user me-2"></i>Giang an lol
-                </button>
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="userDropdown"
-                >
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i class="fas fa-id-card me-2"></i>Thông tin cá nhân
-                    </a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="index.html"
-                      onclick="handleLogout()"
-                    >
-                      <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
-                    </a>
-                  </li>
-                </ul>
-              </div>
+<div class="dropdown">
+    <button 
+      class="btn btn-white shadow-warning text-warning dropdown-toggle" 
+      type="button"
+      id="userDropdown"
+      data-bs-toggle="dropdown" 
+      aria-expanded="false"
+    >
+      <i class="fas fa-user me-2"></i>Giang an lol
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-id-card me-2"></i>Thông tin cá nhân
+        </a>
+      </li>
+      <li><hr class="dropdown-divider"></li>
+      <li>
+        <a class="dropdown-item" href="index.html" onclick="handleLogout()">
+          <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+        </a>
+      </li>
+    </ul>
+  </div>
             </form>
           </div>
         </div>
@@ -142,10 +135,10 @@
         <div class="container">
           <div class="row flex-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0">
-              <a class="img-landing-banner" href="components/order"
+              <a class="img-landing-banner" href="components/order.html""
                 ><img
                   class="img-fluid"
-                  src="../public/img/gallery/hero-header.png"
+                  src="assets/img/gallery/hero-header.png"
                   alt="hero-header"
               /></a>
             </div>
@@ -267,7 +260,7 @@
                 <div class="position-relative">
                   <img
                     class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-1.png"
+                    src="assets/img/gallery/discount-item-1.png"
                     alt="..."
                   />
                   <div class="card-actions">
@@ -300,7 +293,7 @@
                 <div class="position-relative">
                   <img
                     class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-2.png"
+                    src="assets/img/gallery/discount-item-2.png"
                     alt="..."
                   />
                   <div class="card-actions">
@@ -333,7 +326,7 @@
                 <div class="position-relative">
                   <img
                     class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-3.png"
+                    src="assets/img/gallery/discount-item-3.png"
                     alt="..."
                   />
                   <div class="card-actions">
@@ -366,7 +359,7 @@
                 <div class="position-relative">
                   <img
                     class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-4.png"
+                    src="assets/img/gallery/discount-item-4.png"
                     alt="..."
                   />
                   <div class="card-actions">
@@ -417,7 +410,7 @@
                   <div class="text-center">
                     <img
                       class="shadow-icon"
-                      src="../public/img/gallery/location.png"
+                      src="assets/img/gallery/location.png"
                       height="112"
                       alt="..."
                     />
@@ -431,7 +424,7 @@
                   <div class="text-center">
                     <img
                       class="shadow-icon"
-                      src="../public/img/gallery/order.png"
+                      src="assets/img/gallery/order.png"
                       height="112"
                       alt="..."
                     />
@@ -445,7 +438,7 @@
                   <div class="text-center">
                     <img
                       class="shadow-icon"
-                      src="../public/img/gallery/pay.png"
+                      src="assets/img/gallery/pay.png"
                       height="112"
                       alt="..."
                     />
@@ -460,7 +453,7 @@
                   <div class="text-center">
                     <img
                       class="shadow-icon"
-                      src="../public/img/gallery/meals.png"
+                      src="assets/img/gallery/meals.png"
                       height="112"
                       alt="..."
                     />
@@ -501,7 +494,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
+                            src="assets/img/gallery/cheese-burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -519,7 +512,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -529,7 +522,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
+                            src="assets/img/gallery/toffes-cake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -547,7 +540,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -557,7 +550,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
+                            src="assets/img/gallery/dancake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -575,7 +568,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -585,7 +578,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
+                            src="assets/img/gallery/crispy-sandwitch.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -603,7 +596,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -613,7 +606,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
+                            src="assets/img/gallery/thai-soup.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -631,7 +624,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -645,7 +638,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
+                            src="assets/img/gallery/cheese-burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -663,7 +656,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -673,7 +666,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
+                            src="assets/img/gallery/toffes-cake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -691,7 +684,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -701,7 +694,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
+                            src="assets/img/gallery/dancake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -719,7 +712,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -729,7 +722,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
+                            src="assets/img/gallery/crispy-sandwitch.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -747,7 +740,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -757,7 +750,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
+                            src="assets/img/gallery/thai-soup.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -775,7 +768,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -789,7 +782,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
+                            src="assets/img/gallery/cheese-burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -807,7 +800,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -817,7 +810,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
+                            src="assets/img/gallery/toffes-cake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -835,7 +828,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -845,7 +838,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
+                            src="assets/img/gallery/dancake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -863,7 +856,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -873,7 +866,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
+                            src="assets/img/gallery/crispy-sandwitch.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -891,7 +884,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -901,7 +894,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
+                            src="assets/img/gallery/thai-soup.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -919,7 +912,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -933,7 +926,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
+                            src="assets/img/gallery/cheese-burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -951,7 +944,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -961,7 +954,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
+                            src="assets/img/gallery/toffes-cake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -979,7 +972,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -989,7 +982,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
+                            src="assets/img/gallery/dancake.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1007,7 +1000,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1017,7 +1010,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
+                            src="assets/img/gallery/crispy-sandwitch.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1035,7 +1028,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1045,7 +1038,7 @@
                         <div class="card card-span h-100 rounded-3">
                           <img
                             class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
+                            src="assets/img/gallery/thai-soup.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1063,7 +1056,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="components/order"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1119,7 +1112,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/food-world.png"
+                  src="assets/img/gallery/food-world.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1135,7 +1128,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/food-world-logo.png"
+                      src="assets/img/gallery/food-world-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1157,7 +1150,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/pizza-hub.png"
+                  src="assets/img/gallery/pizza-hub.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1173,7 +1166,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/pizzahub-logo.png"
+                      src="assets/img/gallery/pizzahub-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1195,7 +1188,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/donuts-hut.png"
+                  src="assets/img/gallery/donuts-hut.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1211,7 +1204,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/donuts-hut-logo.png"
+                      src="assets/img/gallery/donuts-hut-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1233,7 +1226,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/donuthut.png"
+                  src="assets/img/gallery/donuthut.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1249,7 +1242,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/donut-hut-logo.png"
+                      src="assets/img/gallery/donut-hut-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1271,7 +1264,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/ruby-tuesday.png"
+                  src="assets/img/gallery/ruby-tuesday.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1287,7 +1280,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/ruby-tuesday-logo.png"
+                      src="assets/img/gallery/ruby-tuesday-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1309,7 +1302,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/kuakata.png"
+                  src="assets/img/gallery/kuakata.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1325,7 +1318,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/kuakata-logo.png"
+                      src="assets/img/gallery/kuakata-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1349,7 +1342,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/red-square.png"
+                  src="assets/img/gallery/red-square.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1365,7 +1358,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/red-square-logo.png"
+                      src="assets/img/gallery/red-square-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1389,7 +1382,7 @@
               <div class="card card-span h-100 text-white rounded-3">
                 <img
                   class="img-fluid rounded-3 h-100"
-                  src="../public/img/gallery/taco-bell.png"
+                  src="assets/img/gallery/taco-bell.png"
                   alt="..."
                 />
                 <div class="card-img-overlay ps-0">
@@ -1405,7 +1398,7 @@
                   <div class="d-flex align-items-center mb-3">
                     <img
                       class="img-fluid"
-                      src="../public/img/gallery/taco-bell-logo.png"
+                      src="assets/img/gallery/taco-bell-logo.png"
                       alt=""
                     />
                     <div class="flex-1 ms-3">
@@ -1424,7 +1417,7 @@
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-5">
-              <a class="btn btn-lg btn-primary" href="components/order"
+              <a class="btn btn-lg btn-primary" href="components/order.html""
                 >View All <i class="fas fa-chevron-right ms-2"> </i
               ></a>
             </div>
@@ -1489,7 +1482,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/search-pizza.png"
+                            src="assets/img/gallery/search-pizza.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1505,7 +1498,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/burger.png"
+                            src="assets/img/gallery/burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1521,7 +1514,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/noodles.png"
+                            src="assets/img/gallery/noodles.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1537,7 +1530,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/sub-sandwich.png"
+                            src="assets/img/gallery/sub-sandwich.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1553,7 +1546,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/chowmein.png"
+                            src="assets/img/gallery/chowmein.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1569,7 +1562,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/steak.png"
+                            src="assets/img/gallery/steak.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1589,7 +1582,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/search-pizza.png"
+                            src="assets/img/gallery/search-pizza.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1605,7 +1598,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/burger.png"
+                            src="assets/img/gallery/burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1621,7 +1614,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/noodles.png"
+                            src="assets/img/gallery/noodles.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1637,7 +1630,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/sub-sandwich.png"
+                            src="assets/img/gallery/sub-sandwich.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1653,7 +1646,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/chowmein.png"
+                            src="assets/img/gallery/chowmein.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1669,7 +1662,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/steak.png"
+                            src="assets/img/gallery/steak.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1689,7 +1682,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/search-pizza.png"
+                            src="assets/img/gallery/search-pizza.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1705,7 +1698,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/burger.png"
+                            src="assets/img/gallery/burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1721,7 +1714,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/noodles.png"
+                            src="assets/img/gallery/noodles.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1737,7 +1730,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/sub-sandwich.png"
+                            src="assets/img/gallery/sub-sandwich.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1753,7 +1746,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/chowmein.png"
+                            src="assets/img/gallery/chowmein.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1769,7 +1762,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/steak.png"
+                            src="assets/img/gallery/steak.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1789,7 +1782,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/search-pizza.png"
+                            src="assets/img/gallery/search-pizza.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1805,7 +1798,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/burger.png"
+                            src="assets/img/gallery/burger.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1821,7 +1814,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/noodles.png"
+                            src="assets/img/gallery/noodles.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1837,7 +1830,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/sub-sandwich.png"
+                            src="assets/img/gallery/sub-sandwich.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1853,7 +1846,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/chowmein.png"
+                            src="assets/img/gallery/chowmein.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1869,7 +1862,7 @@
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
-                            src="../public/img/gallery/steak.png"
+                            src="assets/img/gallery/steak.png"
                             alt="..."
                           />
                           <div class="card-body ps-0">
@@ -1897,7 +1890,7 @@
         <div
           class="bg-holder"
           style="
-            background-image: url(../public/img/gallery/cta-one-bg.png);
+            background-image: url(assets/img/gallery/cta-one-bg.png);
             background-position: center;
             background-size: cover;
           "
@@ -1918,7 +1911,7 @@
                         class="d-flex d-md-block d-xl-flex justify-content-evenly justify-content-lg-between"
                       >
                         <img
-                          src="../public/img/icons/discounts.png"
+                          src="assets/img/icons/discounts.png"
                           width="100"
                           alt="..."
                         />
@@ -1934,7 +1927,7 @@
                         class="d-flex d-md-block d-xl-flex justify-content-evenly justify-content-lg-between"
                       >
                         <img
-                          src="../public/img/icons/live-tracking.png"
+                          src="assets/img/icons/live-tracking.png"
                           width="100"
                           alt="..."
                         />
@@ -1950,7 +1943,7 @@
                         class="d-flex d-md-block d-xl-flex justify-content-evenly justify-content-lg-between"
                       >
                         <img
-                          src="../public/img/icons/quick-delivery.png"
+                          src="assets/img/icons/quick-delivery.png"
                           width="100"
                           alt="..."
                         />
@@ -1973,7 +1966,7 @@
             >
               <img
                 class="w-100"
-                src="../public/img/gallery/phone-cta-one.png"
+                src="assets/img/gallery/phone-cta-one.png"
                 alt="..."
               />
             </div>
@@ -1989,12 +1982,12 @@
                 href="https://www.apple.com/app-store/"
                 target="_blank"
                 ><img
-                  src="../public/img/gallery/app-store.svg"
+                  src="assets/img/gallery/app-store.svg"
                   width="160"
                   alt="" /></a
               ><a href="https://play.google.com/store/apps" target="_blank"
                 ><img
-                  src="../public/img/gallery/google-play.svg"
+                  src="assets/img/gallery/google-play.svg"
                   width="160"
                   alt=""
               /></a>
@@ -2017,7 +2010,7 @@
                     >
                       <img
                         class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0"
-                        src="../public/img/gallery/crispy-sandwiches.png"
+                        src="assets/img/gallery/crispy-sandwiches.png"
                         alt="..."
                       />
                     </div>
@@ -2031,9 +2024,7 @@
                         with the perfect slice of sandwiches.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a
-                          class="btn btn-lg btn-primary mt-xl-6"
-                          href="components/order"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2063,7 +2054,7 @@
                     <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-md-0">
                       <img
                         class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-start rounded-md-top-0"
-                        src="../public/img/gallery/fried-chicken.png"
+                        src="assets/img/gallery/fried-chicken.png"
                         alt="..."
                       />
                     </div>
@@ -2078,9 +2069,7 @@
                         chicken.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a
-                          class="btn btn-lg btn-primary mt-xl-6"
-                          href="components/order"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2112,7 +2101,7 @@
                     >
                       <img
                         class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0"
-                        src="../public/img/gallery/pizza.png"
+                        src="assets/img/gallery/pizza.png"
                         alt="..."
                       />
                     </div>
@@ -2126,9 +2115,7 @@
                         pops. Try it with the best deals.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a
-                          class="btn btn-lg btn-primary mt-xl-6"
-                          href="components/order"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2150,7 +2137,7 @@
         <div
           class="bg-holder"
           style="
-            background-image: url(../public/img/gallery/cta-two-bg.png);
+            background-image: url(assets/img/gallery/cta-two-bg.png);
             background-position: center;
             background-size: cover;
           "
@@ -2180,37 +2167,25 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >San Francisco</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Miami</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Miami</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >San Diego</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >East Bay</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Long Beach</a
                   >
                 </li>
@@ -2219,37 +2194,25 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Los Angeles</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Washington DC</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Seattle</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Seattle</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Portland</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Nashville</a
                   >
                 </li>
@@ -2258,76 +2221,48 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New York City</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Orange County</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Atlanta</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Atlanta</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Charlotte</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Denver</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Denver</a>
                 </li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Chicago</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Chicago</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Phoenix</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Phoenix</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Las Vegas</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Sacramento</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Oklahoma City</a
                   >
                 </li>
@@ -2336,37 +2271,27 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Columbus</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New Mexico</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Albuquerque</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Sacramento</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New Orleans</a
                   >
                 </li>
@@ -2379,32 +2304,18 @@
               <h5 class="lh-lg fw-bold text-white">COMPANY</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >About Us</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Team</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Team</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Careers</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Careers</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >blog</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">blog</a>
                 </li>
               </ul>
             </div>
@@ -2412,30 +2323,22 @@
               <h5 class="lh-lg fw-bold text-white">CONTACT</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Help &amp; Support</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Partner with us
                   </a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Ride with us</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Ride with us</a
                   >
                 </li>
@@ -2445,30 +2348,22 @@
               <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Refund &amp; Cancellation</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Privacy Policy</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Cookie Policy</a
                   >
                 </li>
@@ -2478,23 +2373,17 @@
               <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Refund &amp; Cancellation</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Privacy Policy</a
                   >
                 </li>
@@ -2503,7 +2392,7 @@
             <div class="col-12 col-md-8 col-lg-6 col-xxl-4">
               <h5 class="lh-lg fw-bold text-500">FOLLOW US</h5>
               <div class="text-start my-3">
-                <a href="components/order">
+                <a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-instagram fa-w-14 fs-2 me-2"
                     aria-hidden="true"
@@ -2518,7 +2407,7 @@
                       fill="#BDBDBD"
                       d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                     ></path></svg></a
-                ><a href="components/order">
+                ><a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-facebook fa-w-16 fs-2 mx-2"
                     aria-hidden="true"
@@ -2533,7 +2422,7 @@
                       fill="#BDBDBD"
                       d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
                     ></path></svg></a
-                ><a href="components/order">
+                ><a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-twitter fa-w-16 fs-2 mx-2"
                     aria-hidden="true"
@@ -2619,7 +2508,7 @@
     <script src="vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="vendors/fontawesome/all.min.js"></script>
-    <script src="../public/js/theme.js"></script>
+    <script src="assets/js/theme.js"></script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
