@@ -40,6 +40,8 @@
       name="msapplication-TileImage"
       content="assets/img/favicons/mstile-150x150.png"
     />
+    <!-- Auth Scripts -->
+    <script src="assets/js/auth/auth.js"></script>
     <meta name="theme-color" content="#ffffff" />
 
     <!-- ===============================================-->
@@ -293,6 +295,21 @@
                       />
                     </div>
                   </div>
+                  <div
+                    id="registerSuccess"
+                    class="alert alert-success d-none mb-3 text-center"
+                  >
+                    Đã đăng ký thành công!
+                    <a
+                      href="#"
+                      class="alert-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#loginModal"
+                      data-bs-dismiss="modal"
+                    >
+                      Đăng nhập ngay
+                    </a>
+                  </div>
                   <button
                     type="submit"
                     class="btn btn-warning w-100 text-white"
@@ -322,7 +339,7 @@
         <div class="container">
           <div class="row flex-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0">
-              <a class="img-landing-banner" href="#!"
+              <a class="img-landing-banner" href="components/order.html""
                 ><img
                   class="img-fluid"
                   src="assets/img/gallery/hero-header.png"
@@ -331,12 +348,12 @@
             </div>
             <div class="col-md-7 col-lg-6 py-8 text-md-start text-center">
               <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light">
-                Are you starving?
+                Đói bụng à?
               </h1>
               <h1 class="text-800 mb-5 fs-4">
-                Within a few clicks, find meals that<br
+                Vài cú click thôi, bữa ăn ngon lành<br
                   class="d-none d-xxl-block"
-                />are accessible near you
+                />ngay gần đây đáng chờ đợi bạn
               </h1>
               <div class="card w-xxl-75">
                 <div class="card-body">
@@ -352,7 +369,7 @@
                         aria-controls="nav-home"
                         aria-selected="true"
                       >
-                        <i class="fas fa-motorcycle me-2"></i>Delivery
+                        <i class="fas fa-motorcycle me-2"></i>Giao hàng
                       </button>
                       <button
                         class="nav-link mb-3"
@@ -364,7 +381,7 @@
                         aria-controls="nav-profile"
                         aria-selected="false"
                       >
-                        <i class="fas fa-shopping-bag me-2"></i>Pickup
+                        <i class="fas fa-shopping-bag me-2"></i>Chọn món
                       </button>
                     </div>
                   </nav>
@@ -382,7 +399,7 @@
                               class="fas fa-map-marker-alt text-danger input-box-icon"
                             ></i>
                             <label class="visually-hidden" for="inputDelivery"
-                              >Address</label
+                              >Nhập địa chỉ của bạn</label
                             >
                             <input
                               class="form-control input-box form-foodwagon-control"
@@ -394,7 +411,7 @@
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
                           <button class="btn btn-danger" type="submit">
-                            Find Food
+                            Tìm đồ ăn
                           </button>
                         </div>
                       </form>
@@ -412,19 +429,19 @@
                               class="fas fa-map-marker-alt text-danger input-box-icon"
                             ></i>
                             <label class="visually-hidden" for="inputPickup"
-                              >Address</label
+                              >Nhập địa chỉ của bạn</label
                             >
                             <input
                               class="form-control input-box form-foodwagon-control"
                               id="inputPickup"
                               type="text"
-                              placeholder="Enter Your Address"
+                              placeholder="Nhập món ăn"
                             />
                           </div>
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
                           <button class="btn btn-danger" type="submit">
-                            Find Food
+                            Tìm đồ ăn
                           </button>
                         </div>
                       </form>
@@ -661,7 +678,7 @@
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="py-4 overflow-hidden">
+      <section class="py-4 overflow-hidden" id="popular-items">
         <div class="container">
           <div class="row h-100">
             <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
@@ -699,7 +716,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -727,7 +744,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -755,7 +772,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -783,7 +800,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -811,7 +828,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -843,7 +860,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -871,7 +888,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -899,7 +916,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -927,7 +944,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -955,7 +972,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -987,7 +1004,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1015,7 +1032,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1043,7 +1060,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1071,7 +1088,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1099,7 +1116,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1131,7 +1148,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1159,7 +1176,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1187,7 +1204,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1215,7 +1232,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1243,7 +1260,7 @@
                         <div class="d-grid gap-2">
                           <a
                             class="btn btn-lg btn-danger"
-                            href="#!"
+                            href="components/order.html"
                             role="button"
                             >Order now</a
                           >
@@ -1604,7 +1621,7 @@
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-5">
-              <a class="btn btn-lg btn-primary" href="#!"
+              <a class="btn btn-lg btn-primary" href="components/order.html""
                 >View All <i class="fas fa-chevron-right ms-2"> </i
               ></a>
             </div>
@@ -2211,7 +2228,7 @@
                         with the perfect slice of sandwiches.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a class="btn btn-lg btn-primary mt-xl-6" href="#!"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2256,7 +2273,7 @@
                         chicken.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a class="btn btn-lg btn-primary mt-xl-6" href="#!"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2302,7 +2319,7 @@
                         pops. Try it with the best deals.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a class="btn btn-lg btn-primary mt-xl-6" href="#!"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2354,25 +2371,25 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >San Francisco</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Miami</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Miami</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >San Diego</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >East Bay</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Long Beach</a
                   >
                 </li>
@@ -2381,25 +2398,25 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Los Angeles</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Washington DC</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Seattle</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Seattle</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Portland</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Nashville</a
                   >
                 </li>
@@ -2408,48 +2425,48 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New York City</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Orange County</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Atlanta</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Atlanta</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Charlotte</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Denver</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Denver</a>
                 </li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Chicago</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Chicago</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Phoenix</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Phoenix</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Las Vegas</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Sacramento</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Oklahoma City</a
                   >
                 </li>
@@ -2458,27 +2475,27 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Columbus</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New Mexico</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Albuquerque</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Sacramento</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New Orleans</a
                   >
                 </li>
@@ -2491,18 +2508,18 @@
               <h5 class="lh-lg fw-bold text-white">COMPANY</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >About Us</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Team</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Team</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">Careers</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Careers</a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!">blog</a>
+                  <a class="text-200 text-decoration-none" href="components/order.html"">blog</a>
                 </li>
               </ul>
             </div>
@@ -2510,22 +2527,22 @@
               <h5 class="lh-lg fw-bold text-white">CONTACT</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Help &amp; Support</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Partner with us
                   </a>
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Ride with us</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Ride with us</a
                   >
                 </li>
@@ -2535,22 +2552,22 @@
               <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Refund &amp; Cancellation</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Privacy Policy</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Cookie Policy</a
                   >
                 </li>
@@ -2560,17 +2577,17 @@
               <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Refund &amp; Cancellation</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a class="text-200 text-decoration-none" href="#!"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Privacy Policy</a
                   >
                 </li>
@@ -2579,7 +2596,7 @@
             <div class="col-12 col-md-8 col-lg-6 col-xxl-4">
               <h5 class="lh-lg fw-bold text-500">FOLLOW US</h5>
               <div class="text-start my-3">
-                <a href="#!">
+                <a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-instagram fa-w-14 fs-2 me-2"
                     aria-hidden="true"
@@ -2594,7 +2611,7 @@
                       fill="#BDBDBD"
                       d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                     ></path></svg></a
-                ><a href="#!">
+                ><a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-facebook fa-w-16 fs-2 mx-2"
                     aria-hidden="true"
@@ -2609,7 +2626,7 @@
                       fill="#BDBDBD"
                       d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
                     ></path></svg></a
-                ><a href="#!">
+                ><a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-twitter fa-w-16 fs-2 mx-2"
                     aria-hidden="true"

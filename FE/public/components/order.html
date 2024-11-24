@@ -7,7 +7,7 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/img/favicons/apple-touch-icon.png"
+      href="../assets/img/favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
@@ -29,23 +29,24 @@
     <link rel="manifest" href="../assets/img/favicons/manifest.json" />
     <meta
       name="msapplication-TileImage"
-      content="assets/img/favicons/mstile-150x150.png"
+      content="../assets/img/favicons/mstile-150x150.png"
     />
     <link href="../assets/css/theme.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link href="../assets/css/order.css" rel="stylesheet" />
   </head>
   <body>
     <main class="main" id="top">
       <div class="container py-5">
-        <h2 class="text-center mb-4">Thông tin thanh toán</h2>
+        <h2 class="text-center mb-4">Xác nhận thanh toán</h2>
         <div class="row justify-content-center">
           <div class="col-md-8 col-lg-6" id="orderFormSection">
             <div class="card shadow-lg">
               <div class="card-body p-5">
-                <form id="orderForm">
+                <form id="orderForm" class="order-from">
                   <div class="mb-3">
                     <label for="customerName" class="form-label"
                       >Họ và tên</label
@@ -97,7 +98,51 @@
                       />
                     </div>
                   </div>
-
+                  <h5 class="card-title mb-4 mt-4">Chi tiết đơn hàng</h5>
+                  <div class="row mb-3">
+                    <div class="col-sm-4 fw-bold">Tên món:</div>
+                    <div class="col-sm-8" id="displayDishName"></div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Số lượng</label>
+                    <div class="input-group">
+                      <span class="input-group-text">
+                        <i class="fas fa-shopping-cart"></i>
+                      </span>
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        onclick="decreaseQuantity()"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input
+                        type="number"
+                        class="form-control text-center"
+                        id="orderQuantity"
+                        value="1"
+                        min="1"
+                        required
+                        style="max-width: 80px"
+                        onchange="updateTotal()"
+                      />
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="button"
+                        onclick="increaseQuantity()"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-4 fw-bold">Đơn giá:</div>
+                    <div class="col-sm-8" id="displayPrice"></div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-sm-4 fw-bold">Tổng tiền:</div>
+                    <div class="col-sm-8" id="displayTotal"></div>
+                  </div>
                   <div class="mb-3">
                     <label for="orderDate" class="form-label"
                       >Ngày đặt hàng</label
@@ -205,16 +250,17 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Cơm tấm</td>
-                          <td>2</td>
-                          <td>30,000 VND</td>
-                          <td>60,000 VND</td>
+                          <td id="displayDishName"></td>
+                          <td id="orderQuantity"></td>
+                          <td id="displayPrice"></td>
+                          <td id="displayTotal"></td>
                         </tr>
                       </tbody>
+
                       <tfoot>
-                        <tr class="fw-bold">
-                          <td colspan="3" class="text-end">Tổng tiền:</td>
-                          <td>60,000 VND</td>
+                        <tr>
+                          <td colspan="3" class="fw-bold">Tổng cộng:</td>
+                          <td id="displayTotal"></td>
                         </tr>
                       </tfoot>
                     </table>
@@ -277,7 +323,7 @@
     <script src="../assets/js/theme.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Keep existing date/time setup code
+        // Initialize date and time
         const today = new Date().toISOString().split("T")[0];
         document.getElementById("orderDate").value = today;
 
@@ -286,65 +332,167 @@
           .slice(0, 5);
         document.getElementById("orderTime").value = now;
 
-        // Add new form handling code
-        const orderForm = document.getElementById("orderForm");
-        const orderFormSection = document.getElementById("orderFormSection");
-        const confirmationSection = document.getElementById(
-          "confirmationSection"
-        );
+        // Get stored order details from localStorage
+        window.onload = function () {
+          const orderName = localStorage.getItem("orderName");
+          const orderPrice = localStorage.getItem("orderPrice");
 
-        orderForm.addEventListener("submit", function (e) {
-          e.preventDefault();
+          document.getElementById("displayDishName").textContent = orderName;
+          document.getElementById("displayPrice").textContent =
+            parseInt(orderPrice).toLocaleString("vi-VN") + " VND";
+          updateTotal();
+        };
 
-          // Display customer information
-          document.getElementById("displayName").textContent =
-            document.getElementById("customerName").value;
-          document.getElementById("displayPhone").textContent =
-            document.getElementById("phoneNumber").value;
-          document.getElementById("displayAddress").textContent =
-            document.getElementById("address").value;
-          document.getElementById("displayDateTime").textContent = `${
-            document.getElementById("orderDate").value
-          } ${document.getElementById("orderTime").value}`;
-          document.getElementById("displayNotes").textContent =
-            document.getElementById("notes").value;
+        // Handle quantity changes
+        function updateTotal() {
+          const quantity = document.getElementById("orderQuantity").value;
+          const price = localStorage.getItem("orderPrice");
+          const total = quantity * price;
+          document.getElementById("displayTotal").textContent =
+            total.toLocaleString("vi-VN") + " VND";
+        }
 
-          // Show confirmation section and hide form
-          orderFormSection.classList.add("d-none");
-          confirmationSection.classList.remove("d-none");
-        });
+        function increaseQuantity() {
+          const input = document.getElementById("orderQuantity");
+          input.value = parseInt(input.value) + 1;
+          updateTotal();
+        }
 
-        // Handle payment confirmation
+        function decreaseQuantity() {
+          const input = document.getElementById("orderQuantity");
+          if (parseInt(input.value) > 1) {
+            input.value = parseInt(input.value) - 1;
+            updateTotal();
+          }
+        }
+
+        // Form submission handler
         document
-          .getElementById("confirmPayment")
-          .addEventListener("click", function () {
-            const paymentMethod = document.querySelector(
-              'input[name="paymentMethod"]:checked'
-            ).id;
-            alert(
-              `Thanh toán thành công bằng ${
-                paymentMethod === "cashPayment" ? "tiền mặt" : "chuyển khoản"
-              }!`
-            );
+          .getElementById("orderForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get customer info
+            const customerName = document.getElementById("customerName").value;
+            const phone = document.getElementById("phoneNumber").value;
+            const address = document.getElementById("address").value;
+            const notes = document.getElementById("notes").value;
+            const orderDate = document.getElementById("orderDate").value;
+            const orderTime = document.getElementById("orderTime").value;
+
+            // Get order details
+            const dishName =
+              document.getElementById("displayDishName").textContent;
+            const quantity = document.getElementById("orderQuantity").value;
+            const price = document.getElementById("displayPrice").textContent;
+            const total = document.getElementById("displayTotal").textContent;
+
+            // Update customer info display
+            document.getElementById("displayName").textContent = customerName;
+            document.getElementById("displayPhone").textContent = phone;
+            document.getElementById("displayAddress").textContent = address;
+            document.getElementById("displayNotes").textContent =
+              notes || "Không có ghi chú";
+
+            // Update order details table
+            const orderTable = document.querySelector(".table tbody");
+            orderTable.innerHTML = `
+            <tr>
+                <td>${dishName}</td>
+                <td>${quantity}</td>
+                <td>${price}</td>
+                <td>${total}</td>
+            </tr>
+        `;
+
+            // Update footer total
+            document.querySelector(".table tfoot td:last-child").textContent =
+              total;
+
+            // Hide order form, show confirmation
+            document.getElementById("orderFormSection").classList.add("d-none");
+            document
+              .getElementById("confirmationSection")
+              .classList.remove("d-none");
           });
 
-        // Add to existing script
+        // Back button handler
         document
           .getElementById("backToForm")
           .addEventListener("click", function () {
-            // Hide confirmation section
-            document
-              .getElementById("confirmationSection")
-              .classList.add("d-none");
-
-            // Show form section
             document
               .getElementById("orderFormSection")
               .classList.remove("d-none");
-
-            // Form data is preserved since we're just toggling visibility
+            document
+              .getElementById("confirmationSection")
+              .classList.add("d-none");
           });
       });
+    </script>
+    <script>
+      function decreaseQuantity() {
+        const input = document.getElementById("orderQuantity");
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1;
+          updateTotal();
+        }
+      }
+
+      function increaseQuantity() {
+        const input = document.getElementById("orderQuantity");
+        input.value = parseInt(input.value) + 1;
+        updateTotal();
+      }
+
+      function updateTotal() {
+        const quantity = document.getElementById("orderQuantity").value;
+        const price = document
+          .getElementById("displayPrice")
+          .textContent.replace(/[^\d]/g, "");
+        const total = quantity * price;
+        document.getElementById("displayTotal").textContent =
+          total.toLocaleString("vi-VN") + " VND";
+      }
+    </script>
+    <script>
+      window.onload = function () {
+        // Get stored order details
+        const orderName = localStorage.getItem("orderName");
+        const orderPrice = localStorage.getItem("orderPrice");
+
+        // Display dish name
+        document.getElementById("displayDishName").textContent = orderName;
+
+        // Display formatted price
+        const formattedPrice =
+          parseInt(orderPrice).toLocaleString("vi-VN") + " VND";
+        document.getElementById("displayPrice").textContent = formattedPrice;
+
+        // Calculate initial total
+        updateTotal();
+      };
+
+      function updateTotal() {
+        const quantity = document.getElementById("orderQuantity").value;
+        const price = localStorage.getItem("orderPrice");
+        const total = quantity * price;
+        document.getElementById("displayTotal").textContent =
+          total.toLocaleString("vi-VN") + " VND";
+      }
+
+      function increaseQuantity() {
+        const input = document.getElementById("orderQuantity");
+        input.value = parseInt(input.value) + 1;
+        updateTotal();
+      }
+
+      function decreaseQuantity() {
+        const input = document.getElementById("orderQuantity");
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1;
+          updateTotal();
+        }
+      }
     </script>
   </body>
 </html>
