@@ -4801,7 +4801,66 @@ fieldset:disabled .btn {
     font-size: 1.728rem;
   }
 }
+.navbar-nav .nav-link, 
+.navbar-brand span {
+    font-family: var(--bs-font-sans-serif), sans-serif; /* Đảm bảo dùng cùng font */
+    font-weight: 700; /* Đậm như tiêu đề */
+    font-size: 1rem; /* Kích thước tương đồng */
+    color: inherit; /* Giữ nguyên màu */
+    text-transform: none; /* Giữ nguyên dạng chữ nếu có bị thay đổi */
+}
+.navbar-brand {
+  margin-right: 200px; /* Khoảng cách mặc định */
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+      margin-right: 30px; /* Khoảng cách nhỏ hơn trên màn hình nhỏ */
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Dàn đều logo và các mục */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+ /* Sử dụng phông chữ Roboto, có thể thay đổi nếu sử dụng phông chữ khác */
+ body, .order-detail-table th, .order-detail-table td {
+  font-family: 'Roboto', sans-serif; /* Điều chỉnh phông chữ cho bảng chi tiết */
+}
 
+.spacing {
+  margin-top: 20px;
+}
+
+.order-table th, .order-table td {
+  padding: 10px;
+}
+
+.order-detail-table th, .order-detail-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.total-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-info div {
+  margin-bottom: 5px;
+}
+
+.order-detail-header {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* CSS để các nút nằm ở cuối hàng */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
 .navbar-nav {
   display: -webkit-box;
   display: -ms-flexbox;

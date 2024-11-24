@@ -14,7 +14,23 @@ const getindex = (req, res) => {
 };
 
 const gethome = async (req, res) => {
-  res.render("home");
+  let customer_id = req.params.id;
+  console.log(">>> customer_id: ", customer_id);
+  let sql = "SELECT * FROM Customer WHERE customer_id = ?";
+  const [rows] = await connection.query(sql, [customer_id]);
+  console.log(rows);
+  let customer_name = rows[0].name;
+  let Foods = await getAllFoods();
+  let groupedFoods = [];
+  let groupSize = 5;
+  for (let i = 0; i < Foods.length; i += groupSize) {
+    groupedFoods.push(Foods.slice(i, i + groupSize));
+  }
+  res.render("home", {
+    customer_name: customer_name,
+    customer_id: customer_id,
+    groupedFoods: groupedFoods,
+  });
 };
 const getAdmin = async (req, res) => {
   let userId = 1;
@@ -31,6 +47,27 @@ const getAdminFood = async (req, res) => {
   let Foods = await getAllFoods();
   res.render("adminfood", {
     listFoods: Foods,
+  });
+};
+const getorder = async (req, res) => {
+  let customer_id = req.params.customer_id;
+  let food_id = req.params.food_id;
+  let sql = "SELECT * FROM Customer WHERE customer_id = ?";
+  const [rows] = await connection.query(sql, [customer_id]);
+  customer_name = rows[0].name;
+  customer_phone = rows[0].phonenumber;
+  let sql1 = "SELECT * FROM Food WHERE food_id = ?";
+  const [rows1] = await connection.query(sql1, [food_id]);
+  food_name = rows1[0].name;
+  food_price = rows1[0].price;
+  console.log(food_price);
+  res.render("order", {
+    customer_id: customer_id,
+    customer_name: customer_name,
+    customer_phone: customer_phone,
+    food_id: food_id,
+    food_name: food_name,
+    food_price: food_price,
   });
 };
 const postCheckCustomer = async (req, res) => {
@@ -61,14 +98,14 @@ const postCheckCustomer = async (req, res) => {
       }
       let customer = rows[0];
       let pass_fromdb = customer.password;
-      let customer_id = customer.id;
+      let customer_id = customer.customer_id;
       // Sử dụng bcrypt để so sánh mật khẩu nhập vào với mật khẩu đã băm trong cơ sở dữ liệu
       const bcrypt = require("bcrypt");
       const match = password == pass_fromdb ? true : false;
       console.log(match);
       if (match) {
         console.log("OK");
-        res.redirect(`/home/`);
+        res.redirect(`/home/${customer_id}`);
       } else {
         console.log("Not OK");
         res.redirect("/index?error=invalid1");
@@ -131,6 +168,7 @@ module.exports = {
   getAdmin,
   getAdminOrder,
   getAdminFood,
+  getorder,
   postCheckCustomer,
   postCreateCustomer,
   postUpdateCustomer,

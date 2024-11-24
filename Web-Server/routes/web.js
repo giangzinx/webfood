@@ -6,6 +6,7 @@ const {
   getAdmin,
   getAdminOrder,
   getAdminFood,
+  getorder,
   postCheckCustomer,
   postCreateCustomer,
   postUpdateCustomer,
@@ -19,13 +20,15 @@ router.get("/", getindex);
 
 router.get("/index", getindex);
 
-router.get("/home", gethome);
+router.get("/home/:id", gethome);
 
 router.get("/admin", getAdmin);
 
 router.get("/admin-order", getAdminOrder);
 
 router.get("/admin-food", getAdminFood);
+
+router.get("/order/:customer_id/:food_id", getorder);
 
 router.post("/check-customer", postCheckCustomer);
 

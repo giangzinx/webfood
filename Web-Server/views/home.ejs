@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="vi" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,7 +60,7 @@
         data-navbar-on-scroll="data-navbar-on-scroll"
       >
         <div class="container">
-          <a class="navbar-brand d-inline-flex" href="index.html"
+          <a class="navbar-brand d-inline-flex" href="/index"
             ><img
               class="d-inline-block"
               src="../public/img/gallery/logo.svg"
@@ -103,37 +103,35 @@
                 />
               </div>
               <!-- Replace existing button with this dropdown -->
-              <div class="dropdown">
-                <button
-                  class="btn btn-white shadow-warning text-warning dropdown-toggle"
-                  type="button"
-                  id="userDropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-user me-2"></i>Giang an lol
-                </button>
-                <ul
-                  class="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="userDropdown"
-                >
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <i class="fas fa-id-card me-2"></i>Thông tin cá nhân
-                    </a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="index.html"
-                      onclick="handleLogout()"
-                    >
-                      <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
-                    </a>
-                  </li>
-                </ul>
-              </div>
+<div class="dropdown">
+    <button 
+      class="btn btn-white shadow-warning text-warning dropdown-toggle" 
+      type="button"
+      id="userDropdown"
+      data-bs-toggle="dropdown" 
+      aria-expanded="false"
+    >
+      <i class="fas fa-user me-2"></i><%= customer_name %>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-id-card me-2"></i>Thông tin cá nhân
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="components/transaction.html">
+          <i class="fas fa-id-card me-2"></i>Lịch sử giao dịch
+        </a>
+      </li>
+      <li><hr class="dropdown-divider"></li>
+      <li>
+        <a class="dropdown-item" href="/index"">
+          <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+        </a>
+      </li>
+    </ul>
+  </div>
             </form>
           </div>
         </div>
@@ -142,7 +140,7 @@
         <div class="container">
           <div class="row flex-center">
             <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0">
-              <a class="img-landing-banner" href="components/order"
+              <a class="img-landing-banner" href="components/order.html""
                 ><img
                   class="img-fluid"
                   src="../public/img/gallery/hero-header.png"
@@ -257,227 +255,7 @@
         </div>
       </section>
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-0">
-        <div class="container">
-          <div class="row h-100 gx-2 mt-7">
-            <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
-              <div class="card card-span h-100">
-                <div class="position-relative">
-                  <img
-                    class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-1.png"
-                    alt="..."
-                  />
-                  <div class="card-actions">
-                    <div class="badge badge-foodwagon bg-primary p-4">
-                      <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">15</div>
-                        <div class="d-block text-white fs-2">
-                          % <br />
-                          <div class="fw-normal fs-1 mt-2">Off</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">
-                    Flat Hill Slingback
-                  </h5>
-                  <span class="badge bg-soft-danger py-2 px-3"
-                    ><span class="fs-1 text-danger"
-                      >6 days Remaining</span
-                    ></span
-                  >
-                </div>
-                <a class="stretched-link" href="#"></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
-              <div class="card card-span h-100">
-                <div class="position-relative">
-                  <img
-                    class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-2.png"
-                    alt="..."
-                  />
-                  <div class="card-actions">
-                    <div class="badge badge-foodwagon bg-primary p-4">
-                      <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">10</div>
-                        <div class="d-block text-white fs-2">
-                          % <br />
-                          <div class="fw-normal fs-1 mt-2">Off</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">
-                    Ocean Blue Ring
-                  </h5>
-                  <span class="badge bg-soft-danger py-2 px-3"
-                    ><span class="fs-1 text-danger"
-                      >6 days Remaining</span
-                    ></span
-                  >
-                </div>
-                <a class="stretched-link" href="#"></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
-              <div class="card card-span h-100">
-                <div class="position-relative">
-                  <img
-                    class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-3.png"
-                    alt="..."
-                  />
-                  <div class="card-actions">
-                    <div class="badge badge-foodwagon bg-primary p-4">
-                      <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">25</div>
-                        <div class="d-block text-white fs-2">
-                          % <br />
-                          <div class="fw-normal fs-1 mt-2">Off</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">
-                    Brown Leathered Wallet
-                  </h5>
-                  <span class="badge bg-soft-danger py-2 px-3"
-                    ><span class="fs-1 text-danger"
-                      >6 days Remaining</span
-                    ></span
-                  >
-                </div>
-                <a class="stretched-link" href="#"></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
-              <div class="card card-span h-100">
-                <div class="position-relative">
-                  <img
-                    class="img-fluid rounded-3 w-100"
-                    src="../public/img/gallery/discount-item-4.png"
-                    alt="..."
-                  />
-                  <div class="card-actions">
-                    <div class="badge badge-foodwagon bg-primary p-4">
-                      <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">20</div>
-                        <div class="d-block text-white fs-2">
-                          % <br />
-                          <div class="fw-normal fs-1 mt-2">Off</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">
-                    Silverside Wristwatch
-                  </h5>
-                  <span class="badge bg-soft-danger py-2 px-3"
-                    ><span class="fs-1 text-danger"
-                      >6 days Remaining</span
-                    ></span
-                  >
-                </div>
-                <a class="stretched-link" href="#"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-0 bg-primary-gradient">
-        <div class="container">
-          <div class="row justify-content-center g-0">
-            <div class="col-xl-9">
-              <div class="col-lg-6 text-center mx-auto mb-3 mb-md-5 mt-4">
-                <h5 class="fw-bold text-danger fs-3 fs-lg-5 lh-sm my-6">
-                  How does it work
-                </h5>
-              </div>
-              <div class="row">
-                <div class="col-sm-6 col-md-3 mb-6">
-                  <div class="text-center">
-                    <img
-                      class="shadow-icon"
-                      src="../public/img/gallery/location.png"
-                      height="112"
-                      alt="..."
-                    />
-                    <h5 class="mt-4 fw-bold">Select location</h5>
-                    <p class="mb-md-0">
-                      Choose the location where your food will be delivered.
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-3 mb-6">
-                  <div class="text-center">
-                    <img
-                      class="shadow-icon"
-                      src="../public/img/gallery/order.png"
-                      height="112"
-                      alt="..."
-                    />
-                    <h5 class="mt-4 fw-bold">Choose order</h5>
-                    <p class="mb-md-0">
-                      Check over hundreds of menus to pick your favorite food
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-3 mb-6">
-                  <div class="text-center">
-                    <img
-                      class="shadow-icon"
-                      src="../public/img/gallery/pay.png"
-                      height="112"
-                      alt="..."
-                    />
-                    <h5 class="mt-4 fw-bold">Pay advanced</h5>
-                    <p class="mb-md-0">
-                      It's quick, safe, and simple. Select several methods of
-                      payment
-                    </p>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-3 mb-6">
-                  <div class="text-center">
-                    <img
-                      class="shadow-icon"
-                      src="../public/img/gallery/meals.png"
-                      height="112"
-                      alt="..."
-                    />
-                    <h5 class="mt-4 fw-bold">Enjoy meals</h5>
-                    <p class="mb-md-0">
-                      Food is made and delivered directly to your home.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
@@ -485,618 +263,47 @@
         <div class="container">
           <div class="row h-100">
             <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Popular items</h5>
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Best seller</h5>
             </div>
             <div class="col-12">
-              <div
-                class="carousel slide"
-                id="carouselPopularItems"
-                data-bs-touch="false"
-                data-bs-interval="false"
-              >
+              <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <div class="row gx-3 h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Cheese Burger
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Burger Arena</span>
+                  <% groupedFoods.forEach((group, index) => { %>
+                    <div class="carousel-item <%= index === 0 ? 'active' : '' %>" data-bs-interval="<%= 10000 - index * 2000 %>">
+                      <div class="row gx-3 h-100 align-items-center">
+                        <% group.forEach(food => { %>
+                          <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
+                            <div class="card card-span h-100 rounded-3">
+                              <img class="img-fluid rounded-3 h-100" src="../public/img/img_dish/<%= food.food_id %>.jpg" alt="<%= food.name %>" />
+                              <div class="card-body ps-0">
+                                <h5 class="fw-bold text-1000 text-truncate mb-1"><%= food.name %></h5>
+                                <div class="form-check form-switch">
+                                  <label class="form-check-label availability-label text-success">
+                                    <%= food.status === 'Còn hàng' ? 'Còn hàng' : 'Hết hàng' %>
+                                  </label>
+                                </div>
+                                <span class="text-1000 fw-bold"><%= food.price.toLocaleString() %> VND</span>
+                              </div>
                             </div>
-                            <span class="text-1000 fw-bold">$3.88</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Toffe's Cake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Top Sticks</span>
+                            <div class="d-grid gap-2">
+                              <a class="btn btn-lg btn-danger order-button" onclick="saveOrderDetails(this)" base href="/order/<%= customer_id %>/<%= food.food_id %>" role="button">Đặt ngay</a>
                             </div>
-                            <span class="text-1000 fw-bold">$4.00</span>
                           </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Dancake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Cake World</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$1.99</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Crispy Sandwitch
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Fastfood Dine</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Thai Soup
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Foody Man</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$2.79</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
+                        <% }); %>
                       </div>
                     </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="5000">
-                    <div class="row gx-3 h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Cheese Burger
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Burger Arena</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.88</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Toffe's Cake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Top Sticks</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$4.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Dancake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Cake World</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$1.99</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Crispy Sandwitch
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Fastfood Dine</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Thai Soup
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Foody Man</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$2.79</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <div class="row gx-3 h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Cheese Burger
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Burger Arena</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.88</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Toffe's Cake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Top Sticks</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$4.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Dancake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Cake World</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$1.99</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Crispy Sandwitch
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Fastfood Dine</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Thai Soup
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Foody Man</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$2.79</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row gx-3 h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/cheese-burger.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Cheese Burger
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Burger Arena</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.88</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/toffes-cake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Toffe's Cake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Top Sticks</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$4.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/dancake.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Dancake
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Cake World</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$1.99</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/crispy-sandwitch.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Crispy Sandwitch
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Fastfood Dine</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$3.00</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3">
-                          <img
-                            class="img-fluid rounded-3 h-100"
-                            src="../public/img/gallery/thai-soup.png"
-                            alt="..."
-                          />
-                          <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">
-                              Thai Soup
-                            </h5>
-                            <div>
-                              <span class="text-warning me-2"
-                                ><i class="fas fa-map-marker-alt"></i></span
-                              ><span class="text-primary">Foody Man</span>
-                            </div>
-                            <span class="text-1000 fw-bold">$2.79</span>
-                          </div>
-                        </div>
-                        <div class="d-grid gap-2">
-                          <a
-                            class="btn btn-lg btn-danger"
-                            href="components/order"
-                            role="button"
-                            >Order now</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <% }); %>
                 </div>
-                <button
-                  class="carousel-control-prev carousel-icon"
-                  type="button"
-                  data-bs-target="#carouselPopularItems"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon hover-top-shadow"
-                    aria-hidden="true"
-                  ></span
-                  ><span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
                 </button>
-                <button
-                  class="carousel-control-next carousel-icon"
-                  type="button"
-                  data-bs-target="#carouselPopularItems"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon hover-top-shadow"
-                    aria-hidden="true"
-                  ></span
-                  ><span class="visually-hidden">Next </span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
                 </button>
               </div>
+              
             </div>
           </div>
         </div>
@@ -1424,7 +631,7 @@
               </div>
             </div>
             <div class="col-12 d-flex justify-content-center mt-5">
-              <a class="btn btn-lg btn-primary" href="components/order"
+              <a class="btn btn-lg btn-primary" href="components/order.html""
                 >View All <i class="fas fa-chevron-right ms-2"> </i
               ></a>
             </div>
@@ -1485,7 +692,7 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1501,7 +708,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1517,7 +724,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1533,7 +740,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1549,7 +756,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1565,7 +772,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1585,7 +792,7 @@
                   </div>
                   <div class="carousel-item" data-bs-interval="5000">
                     <div class="row h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1601,7 +808,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1617,7 +824,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1633,7 +840,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1649,7 +856,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1665,7 +872,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1685,7 +892,7 @@
                   </div>
                   <div class="carousel-item" data-bs-interval="3000">
                     <div class="row h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1701,7 +908,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1717,7 +924,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1733,7 +940,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1749,7 +956,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1765,7 +972,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1785,7 +992,7 @@
                   </div>
                   <div class="carousel-item">
                     <div class="row h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1801,7 +1008,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1817,7 +1024,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1833,7 +1040,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1849,7 +1056,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -1865,7 +1072,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100 product-item">
                         <div class="card card-span h-100 rounded-circle">
                           <img
                             class="img-fluid rounded-circle h-100"
@@ -2031,9 +1238,7 @@
                         with the perfect slice of sandwiches.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a
-                          class="btn btn-lg btn-primary mt-xl-6"
-                          href="components/order"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2078,9 +1283,7 @@
                         chicken.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a
-                          class="btn btn-lg btn-primary mt-xl-6"
-                          href="components/order"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2126,9 +1329,7 @@
                         pops. Try it with the best deals.
                       </p>
                       <div class="d-grid bottom-0">
-                        <a
-                          class="btn btn-lg btn-primary mt-xl-6"
-                          href="components/order"
+                        <a class="btn btn-lg btn-primary mt-xl-6" href="components/order.html""
                           >PROCEED TO ORDER<i
                             class="fas fa-chevron-right ms-2"
                           ></i
@@ -2180,37 +1381,25 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >San Francisco</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Miami</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Miami</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >San Diego</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >East Bay</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Long Beach</a
                   >
                 </li>
@@ -2219,37 +1408,25 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Los Angeles</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Washington DC</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Seattle</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Seattle</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Portland</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Nashville</a
                   >
                 </li>
@@ -2258,76 +1435,48 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New York City</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Orange County</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Atlanta</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Atlanta</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Charlotte</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Denver</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Denver</a>
                 </li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Chicago</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Chicago</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Phoenix</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Phoenix</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Las Vegas</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Sacramento</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Oklahoma City</a
                   >
                 </li>
@@ -2336,37 +1485,27 @@
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Columbus</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New Mexico</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Albuquerque</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Sacramento</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >New Orleans</a
                   >
                 </li>
@@ -2379,32 +1518,18 @@
               <h5 class="lh-lg fw-bold text-white">COMPANY</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >About Us</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Team</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Team</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >Careers</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">Careers</a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
-                    >blog</a
-                  >
+                  <a class="text-200 text-decoration-none" href="components/order.html"">blog</a>
                 </li>
               </ul>
             </div>
@@ -2412,30 +1537,22 @@
               <h5 class="lh-lg fw-bold text-white">CONTACT</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Help &amp; Support</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Partner with us
                   </a>
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Ride with us</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Ride with us</a
                   >
                 </li>
@@ -2445,30 +1562,22 @@
               <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Refund &amp; Cancellation</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Privacy Policy</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Cookie Policy</a
                   >
                 </li>
@@ -2478,23 +1587,17 @@
               <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Terms &amp; Conditions</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Refund &amp; Cancellation</a
                   >
                 </li>
                 <li class="lh-lg">
-                  <a
-                    class="text-200 text-decoration-none"
-                    href="components/order"
+                  <a class="text-200 text-decoration-none" href="components/order.html""
                     >Privacy Policy</a
                   >
                 </li>
@@ -2503,7 +1606,7 @@
             <div class="col-12 col-md-8 col-lg-6 col-xxl-4">
               <h5 class="lh-lg fw-bold text-500">FOLLOW US</h5>
               <div class="text-start my-3">
-                <a href="components/order">
+                <a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-instagram fa-w-14 fs-2 me-2"
                     aria-hidden="true"
@@ -2518,7 +1621,7 @@
                       fill="#BDBDBD"
                       d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                     ></path></svg></a
-                ><a href="components/order">
+                ><a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-facebook fa-w-16 fs-2 mx-2"
                     aria-hidden="true"
@@ -2533,7 +1636,7 @@
                       fill="#BDBDBD"
                       d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
                     ></path></svg></a
-                ><a href="components/order">
+                ><a href="components/order.html">
                   <svg
                     class="svg-inline--fa fa-twitter fa-w-16 fs-2 mx-2"
                     aria-hidden="true"
@@ -2614,16 +1717,52 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
+    <script src="../public/vendors/@popperjs/popper.min.js"></script>
+    <script src="../public/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../public/vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="../public/vendors/fontawesome/all.min.js"></script>
     <script src="../public/js/theme.js"></script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
       rel="stylesheet"
     />
+ 
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Lấy tất cả các sản phẩm trên trang
+        const productItems = document.querySelectorAll('.product-item');
+      
+        productItems.forEach(function(productItem) {
+          const availabilityLabel = productItem.querySelector('.availability-label');
+          const orderButton = productItem.querySelector('.order-button');
+      
+          // Kiểm tra trạng thái của nhãn và cập nhật tương ứng
+          if (availabilityLabel.textContent.trim() !== "Còn hàng") {
+            // Vô hiệu hóa nút "Đặt ngay"
+            orderButton.classList.add('disabled');
+            orderButton.href = "javascript:void(0)"; // Vô hiệu hóa link khi không còn hàng
+      
+            // Thay đổi màu của nhãn "Hết hàng" thành màu đỏ
+            availabilityLabel.classList.remove('text-success');
+            availabilityLabel.classList.add('text-danger');
+            availabilityLabel.textContent = "Hết hàng";
+          }
+        });
+      });
+      
+    </script>
+<script>
+function saveOrderDetails(button) {
+  const card = button.closest('.col-sm-6');
+  const name = card.querySelector('[data-name]').dataset.name;
+  const price = card.querySelector('[data-price]').dataset.price;
+  
+  localStorage.setItem('orderName', name);
+  localStorage.setItem('orderPrice', price);
+}
+</script>
   </body>
 </html>
