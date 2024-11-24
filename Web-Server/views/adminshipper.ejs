@@ -45,7 +45,7 @@
         data-navbar-on-scroll="data-navbar-on-scroll"
       >
         <div class="container">
-          <a class="navbar-brand d-inline-flex" href="/admin"
+          <a class="navbar-brand d-inline-flex" href="index.html"
             ><img
               class="d-inline-block"
               src="../public/img/gallery/logo.svg"
@@ -112,7 +112,7 @@
             <div class="position-sticky pt-3">
               <ul class="nav flex-column">
                 <li class="nav-item">
-                  <a class="nav-link active" href="/admin">
+                  <a class="nav-link" href="/admin">
                     <i class="fas fa-users me-2"></i>
                     Người dùng
                   </a>
@@ -124,7 +124,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin-shipper">
+                  <a class="nav-link active" href="/admin-shipper">
                     <i class="fas fa-truck me-2"></i>
                     Giao hàng
                   </a>
@@ -148,30 +148,15 @@
               <div class="card mb-4">
                 <div class="card-header">
                   <h5 class="mb-0">
-                    <i class="fas fa-user-plus me-2"></i>Thêm Người Dùng
+                    <i class="fas fa-user-plus me-2"></i>Thêm Shipper
                   </h5>
                 </div>
                 <div class="card-body">
-                  <form
-                    id="addUserForm"
-                    action="/create-customer"
-                    method="post"
-                  >
+                  <form id="addUserForm" action="/create-shipper" method="post">
                     <div class="row g-3">
-                      <div class="mb-none">
-                        <label for="username" class="form-label">Check</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="check"
-                          name="check"
-                          value="1"
-                          ;
-                        />
-                      </div>
                       <div class="col-md-4">
                         <label for="username" class="form-label"
-                          >Tên người dùng</label
+                          >Tên shipper</label
                         >
                         <input
                           type="text"
@@ -228,7 +213,7 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="mb-0">
-                    <i class="fas fa-users me-2"></i>Danh Sách Người Dùng
+                    <i class="fas fa-users me-2"></i>Danh Sách Shipper
                   </h5>
                 </div>
                 <div class="card-body">
@@ -237,28 +222,28 @@
                       <thead>
                         <tr>
                           <th>STT</th>
-                          <th>Tên người dùng</th>
+                          <th>Tên Shipper</th>
                           <th>Số điện thoại</th>
                           <th>Mật khẩu</th>
                           <th>Thao tác</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <% listCustomers.forEach(function(customer) { %>
+                        <% listShippers.forEach(function(shipper) { %>
                         <tr>
                           <td><%= userId++ %></td>
-                          <td><%= customer.name %></td>
-                          <td><%= customer.phonenumber %></td>
-                          <td><%= customer.password %></td>
+                          <td><%= shipper.name %></td>
+                          <td><%= shipper.phonenumber %></td>
+                          <td><%= shipper.password %></td>
                           <td>
                             <button
                               class="btn btn-sm btn-warning me-2"
-                              onclick="openEditUserModal('<%= customer.customer_id %>', '<%= customer.name %>', '<%= customer.phonenumber %>', '<%= customer.password %>')"
+                              onclick="openEditUserModal('<%= shipper.shipper_id %>', '<%= shipper.name %>', '<%= shipper.phonenumber %>', '<%= shipper.password %>')"
                             >
                               <i class="fas fa-edit"></i> Sửa
                             </button>
                             <form
-                              action="/delete-customer/<%= customer.customer_id %>"
+                              action="/delete-shipper/<%= shipper.shipper_id %>"
                               method="post"
                             >
                               <button class="btn btn-sm btn-danger">
@@ -274,12 +259,13 @@
                 </div>
               </div>
               <!-- Add this modal markup at the end of body tag -->
-              <div class="modal fade" id="editUserModal" tabadmin="-1">
+              <div class="modal fade" id="editUserModal" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title">
-                        <i class="fas fa-user-edit me-2"></i>Sửa Người Dùng
+                        <i class="fas fa-user-edit me-2"></i>Thay đổi thông tin
+                        shipper
                       </h5>
                       <button
                         type="button"
@@ -292,7 +278,7 @@
                         <input type="hidden" id="editUserId" />
                         <div class="mb-3">
                           <label for="editUsername" class="form-label"
-                            >Tên người dùng</label
+                            >Tên Shipper</label
                           >
                           <input
                             type="text"
@@ -360,10 +346,10 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../public/vendors/is/is.min.js"></script>
+    <script src="../vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../public/vendors/fontawesome/all.min.js"></script>
-    <script src="../public/js/theme.js"></script>
+    <script src="../vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
@@ -389,6 +375,7 @@
         });
     </script>
     <script>
+      // Add this JavaScript
       function openEditUserModal(userId, name, phone, password) {
         // Populate the form fields with user data
         document.getElementById("editUserId").value = userId;
@@ -402,22 +389,22 @@
         );
         modal.show();
       }
+
       function saveUserEdit() {
-        const customer_id = document.getElementById("editUserId").value;
+        const shipper_id = document.getElementById("editUserId").value;
         const name = document.getElementById("editUsername").value;
         const phonenumber = document.getElementById("editPhone").value;
         const password = document.getElementById("editPassword").value;
 
         // Tạo object chứa dữ liệu người dùng
         const userData = {
-          customer_id: customer_id,
+          shipper_id: shipper_id,
           name: name,
           phonenumber: phonenumber,
           password: password,
         };
-
         // Gửi dữ liệu đến server
-        fetch(`/update-customer/${customer_id}`, {
+        fetch(`/update-shipper/${shipper_id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -436,7 +423,6 @@
           .catch((error) => {
             console.error("Error:", error);
           });
-
         // Đóng modal
         const modal = bootstrap.Modal.getInstance(
           document.getElementById("editUserModal")
@@ -467,28 +453,28 @@
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get("error");
         console.log("Error parameter: ", error);
-        if (error === "createcustomer") {
-          alert("Thêm người dùng thành công");
+        if (error === "createshipper") {
+          alert("Thêm Shipper thành công");
           setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
+            window.location.href = "/admin-shipper"; // Tải lại trang mà không có tham số URL
           }, 1000);
         }
-        if (error === "updatecustomer") {
-          alert("Cập nhật người dùng thành công");
+        if (error === "updateshipper") {
+          alert("Cập nhật Shipper thành công");
           setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
+            window.location.href = "/admin-shipper"; // Tải lại trang mà không có tham số URL
           }, 1000);
         }
-        if (error === "deletecustomer") {
-          alert("Xóa người dùng thành công");
+        if (error === "deleteshipper") {
+          alert("Xóa Shipper thành công");
           setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
+            window.location.href = "/admin-shipper"; // Tải lại trang mà không có tham số URL
           }, 1000);
         }
-        if (error === "createcustomerfail") {
+        if (error === "createshipperfail") {
           alert("Email đã tồn tại, vui lòng nhập lại");
           setTimeout(() => {
-            window.location.href = "/admin"; // Tải lại trang mà không có tham số URL
+            window.location.href = "/admin-shipper"; // Tải lại trang mà không có tham số URL
           }, 1000);
         }
       };

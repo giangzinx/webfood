@@ -13,6 +13,20 @@ const updateCustomerById = async (customer_id, name, phonenumber, password) => {
     [name, phonenumber, password, customer_id]
   );
 };
+const getAllShipper = async () => {
+  let [results, fields] = await connection.query("select * from Shipper");
+  return results;
+};
+const updateShipperById = async (shipper_id, name, phonenumber, password) => {
+  let [results, fields] = await connection.query(
+    `
+  UPDATE Shipper
+  SET name = ?, phonenumber= ?, password =?
+  WHERE shipper_id =  ?
+  `,
+    [name, phonenumber, password, shipper_id]
+  );
+};
 const getAllFoods = async () => {
   let [results, fields] = await connection.query("select * from Food");
   return results;
@@ -30,6 +44,8 @@ const updateFoodById = async (foodId, status) => {
 module.exports = {
   getAllCustomers,
   updateCustomerById,
+  getAllShipper,
+  updateShipperById,
   getAllFoods,
   updateFoodById,
 };

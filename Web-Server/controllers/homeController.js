@@ -4,6 +4,8 @@ const { name } = require("ejs");
 const {
   getAllCustomers,
   updateCustomerById,
+  getAllShipper,
+  updateShipperById,
   getAllFoods,
   updateFoodById,
 } = require("../services/CRUDService");
@@ -42,6 +44,14 @@ const getAdmin = async (req, res) => {
 };
 const getAdminOrder = async (req, res) => {
   res.render("adminorder");
+};
+const getAdminShipper = async (req, res) => {
+  let userId = 1;
+  let Shippers = await getAllShipper();
+  res.render("adminshipper", {
+    listShippers: Shippers,
+    userId: userId,
+  });
 };
 const getAdminFood = async (req, res) => {
   let Foods = await getAllFoods();
@@ -154,6 +164,40 @@ const postDeleteCustomer = async (req, res) => {
   let [results, fields] = await connection.query(sql, [userId]);
   res.redirect("/admin?error=deletecustomer");
 };
+const postCreateShipper = async (req, res) => {
+  let phonenumber = req.body.phonenumber;
+  let name = req.body.name;
+  let password = req.body.password;
+  let sql = "SELECT * FROM Shipper WHERE phonenumber = ?";
+  const [rows] = await connection.query(sql, [phonenumber]);
+  console.log(rows);
+  if (rows.length <= 0) {
+    let [results, fields] = await connection.query(
+      `INSERT INTO Shipper (phonenumber,password,name)
+        VALUES(?,?,?);`,
+      [phonenumber, password, name]
+    );
+    console.log(">>> check results: ", results);
+    return res.redirect("/admin-shipper?error=createshipper");
+  } else {
+    return res.redirect("/admin-shipper?error=createshipperfail");
+  }
+};
+const postUpdateShipper = async (req, res) => {
+  let shipper_id = req.body.shipper_id;
+  let name = req.body.name;
+  let phonenumber = req.body.phonenumber;
+  let password = req.body.password;
+
+  await updateShipperById(shipper_id, name, phonenumber, password);
+  res.redirect("/admin-shipper?error=updateshipper");
+};
+const postDeleteShipper = async (req, res) => {
+  const userId = req.params.id;
+  let sql = `DELETE FROM Shipper WHERE shipper_id=?`;
+  let [results, fields] = await connection.query(sql, [userId]);
+  res.redirect("/admin-shipper?error=deleteshipper");
+};
 const postUpdateFood = async (req, res) => {
   const foodId = req.params.id;
   const { status } = req.body;
@@ -168,10 +212,14 @@ module.exports = {
   getAdmin,
   getAdminOrder,
   getAdminFood,
+  getAdminShipper,
   getorder,
   postCheckCustomer,
   postCreateCustomer,
   postUpdateCustomer,
   postDeleteCustomer,
+  postCreateShipper,
+  postUpdateShipper,
+  postDeleteShipper,
   postUpdateFood,
 };
