@@ -46,7 +46,50 @@
           <div class="col-md-8 col-lg-6" id="orderFormSection">
             <div class="card shadow-lg">
               <div class="card-body p-5">
-                <form id="orderForm" class="order-from">
+                <form
+                  id="orderForm"
+                  class="order-from"
+                  action="/create-order"
+                  method="POST"
+                >
+                  <input
+                    type="hidden"
+                    name="customer_id"
+                    id="hiddenCustomerId"
+                    value="<%= customer_id %>"
+                  />
+
+                  <!-- Trường ẩn chứa ID món ăn -->
+                  <input
+                    type="hidden"
+                    name="food_id"
+                    id="hiddenFoodId"
+                    value="<%= food_id %>"
+                  />
+
+                  <!-- Các trường ẩn khác cần thiết -->
+                  <input
+                    type="hidden"
+                    name="customer_name"
+                    id="hiddenCustomerName"
+                  />
+                  <input
+                    type="hidden"
+                    name="phone_number"
+                    id="hiddenPhoneNumber"
+                  />
+                  <input type="hidden" name="address" id="hiddenAddress" />
+                  <input type="hidden" name="food_name" id="hiddenFoodName" />
+                  <input type="hidden" name="food_price" id="hiddenFoodPrice" />
+                  <input type="hidden" name="quantity" id="hiddenQuantity" />
+                  <input
+                    type="hidden"
+                    name="total_price"
+                    id="hiddenTotalPrice"
+                  />
+                  <input type="hidden" name="order_date" id="hiddenOrderDate" />
+                  <input type="hidden" name="order_time" id="hiddenOrderTime" />
+                  <input type="hidden" name="notes" id="hiddenNotes" />
                   <div class="mb-3">
                     <label for="customerName" class="form-label"
                       >Họ và tên</label
@@ -272,7 +315,7 @@
                 <button
                   type="button"
                   class="btn btn-warning text-white"
-                  id="confirmPayment"
+                  id="finalConfirmPayment"
                 >
                   Xác nhận thanh toán
                 </button>
@@ -434,6 +477,105 @@
       document.addEventListener("DOMContentLoaded", function () {
         updateTotal(); // Tính tổng tiền khi trang tải
       });
+    </script>
+    <script>
+      // Hiển thị phần tổng kết khi nhấn "Xác nhận đặt hàng"
+      document
+        .getElementById("orderForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Ngăn form gửi mặc định
+
+          // Cập nhật thông tin vào phần xác nhận
+          document.getElementById("displayName").textContent =
+            document.getElementById("customerName").value;
+          document.getElementById("displayPhone").textContent =
+            document.getElementById("phoneNumber").value;
+          document.getElementById("displayAddress").textContent =
+            document.getElementById("address").value;
+          document.getElementById("displayNotes").textContent =
+            document.getElementById("notes").value || "Không có ghi chú";
+          document.getElementById("displayDateTime").textContent =
+            document.getElementById("orderDate").value +
+            " - " +
+            document.getElementById("orderTime").value;
+
+          const dishName =
+            document.getElementById("displayDishName").textContent;
+          const quantity = document.getElementById("orderQuantity").value;
+          const price = document.getElementById("displayPrice").textContent;
+          const total = document.getElementById("displayTotal").textContent;
+
+          // Cập nhật chi tiết món ăn
+          const orderTable = document.querySelector(".table tbody");
+          orderTable.innerHTML = `
+    <tr>
+      <td>${dishName}</td>
+      <td>${quantity}</td>
+      <td>${price}</td>
+      <td>${total}</td>
+    </tr>
+  `;
+          document.querySelector(".table tfoot td:last-child").textContent =
+            total;
+
+          // Hiển thị phần xác nhận và ẩn form
+          document.getElementById("orderFormSection").classList.add("d-none");
+          document
+            .getElementById("confirmationSection")
+            .classList.remove("d-none");
+        });
+
+      // Gửi dữ liệu khi nhấn "Xác nhận thanh toán"
+      document
+        .getElementById("finalConfirmPayment")
+        .addEventListener("click", function () {
+          // Cập nhật dữ liệu vào các trường ẩn
+          document.getElementById("hiddenCustomerId").value =
+            "<%= customer_id %>";
+          document.getElementById("hiddenFoodId").value = "<%= food_id %>";
+          document.getElementById("hiddenCustomerName").value =
+            document.getElementById("customerName").value;
+          document.getElementById("hiddenPhoneNumber").value =
+            document.getElementById("phoneNumber").value;
+          document.getElementById("hiddenAddress").value =
+            document.getElementById("address").value;
+          document.getElementById("hiddenFoodName").value =
+            document.getElementById("displayDishName").textContent;
+          document.getElementById("hiddenFoodPrice").value = parseInt(
+            document
+              .getElementById("displayPrice")
+              .textContent.replace(/[^\d]/g, "")
+          );
+          document.getElementById("hiddenQuantity").value =
+            document.getElementById("orderQuantity").value;
+          document.getElementById("hiddenTotalPrice").value = parseInt(
+            document
+              .getElementById("displayTotal")
+              .textContent.replace(/[^\d]/g, "")
+          );
+          document.getElementById("hiddenOrderDate").value =
+            document.getElementById("orderDate").value;
+          document.getElementById("hiddenOrderTime").value =
+            document.getElementById("orderTime").value;
+          document.getElementById("hiddenNotes").value =
+            document.getElementById("notes").value || "Không có ghi chú";
+
+          // Gửi form
+          document.getElementById("orderForm").submit();
+        });
+
+      // Quay lại chỉnh sửa khi nhấn "Quay lại"
+      document
+        .getElementById("backToForm")
+        .addEventListener("click", function () {
+          // Hiển thị lại form đặt hàng và ẩn phần xác nhận
+          document
+            .getElementById("orderFormSection")
+            .classList.remove("d-none");
+          document
+            .getElementById("confirmationSection")
+            .classList.add("d-none");
+        });
     </script>
   </body>
 </html>

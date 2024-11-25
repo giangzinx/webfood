@@ -162,41 +162,25 @@
               </tr>
             </thead>
             <tbody>
+              <% listOrders.forEach(function(order) { %>
               <tr>
-                <td>1</td>
-                <td>DH001</td>
-                <td>0123456789</td>
-                <td>Cơm tấm sườn</td>
-                <td>2</td>
-                <td>60,000đ</td>
+                <td><%= index++ %></td>
+                <td><%= order.order_id %></td>
+                <td><%= order.customer_phone %></td>
+                <td><%= order.food_name %></td>
+                <td><%= order.quantity %></td>
+                <td><%= order.total_price %> VND</td>
                 <td>
-                  <span class="badge bg-warning text-dark"
-                    >Chưa thanh toán</span
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>DH002</td>
-                <td>0987654321</td>
-                <td>Phở bò</td>
-                <td>1</td>
-                <td>45,000đ</td>
-                <td>
-                  <span class="badge bg-success">Đã thanh toán</span>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>DH003</td>
-                <td>0369852147</td>
-                <td>Bún bò</td>
-                <td>3</td>
-                <td>120,000đ</td>
-                <td>
+                  <% if (order.status === 'Đã hủy') { %>
                   <span class="badge bg-danger">Đã hủy</span>
+                  <% } else if (order.status === 'Đã vận chuyển') { %>
+                  <span class="badge bg-success">Đã vận chuyển</span>
+                  <% } else { %>
+                  <span class="badge bg-warning"><%= order.status %></span>
+                  <% } %>
                 </td>
               </tr>
+              <% }); %>
             </tbody>
           </table>
         </div>

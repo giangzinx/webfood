@@ -8,6 +8,10 @@ const {
   updateShipperById,
   getAllFoods,
   updateFoodById,
+  getAllOrders,
+  updateOrderById,
+  getCustomerOrders,
+  getShipperOrders,
 } = require("../services/CRUDService");
 var session = require("express-session");
 
@@ -43,7 +47,12 @@ const getAdmin = async (req, res) => {
   });
 };
 const getAdminOrder = async (req, res) => {
-  res.render("adminorder");
+  let index = 1;
+  let Orders = await getAllOrders();
+  res.render("adminorder", {
+    listOrders: Orders,
+    index: index,
+  });
 };
 const getAdminShipper = async (req, res) => {
   let userId = 1;
@@ -80,10 +89,29 @@ const getorder = async (req, res) => {
     food_price: food_price,
   });
 };
+const getshipper = async (req, res) => {
+  let shipper_id = req.params.id;
+  let index = 1;
+  let sql = "SELECT * FROM Shipper WHERE shipper_id = ?";
+  const [rows] = await connection.query(sql, [shipper_id]);
+  let CustomerOrder = await getCustomerOrders();
+  console.log(CustomerOrder);
+  let ShipperOrder = await getShipperOrders(shipper_id);
+  console.log(ShipperOrder);
+  let shipper_name = rows[0].name;
+  res.render("shipper", {
+    shipper_name: shipper_name,
+    shipper_id: shipper_id,
+    index: index,
+    ListCustomerOrder: CustomerOrder,
+    ListShipperOrder: ShipperOrder,
+  });
+};
 const postCheckCustomer = async (req, res) => {
   let phone = req.body.phone;
   let password = req.body.password;
   let Adminsql = "SELECT * FROM Admin WHERE username = ?";
+  let Shippersql = "SELECT * FROM Shipper WHERE phonenumber = ?";
   let sql = "SELECT * FROM Customer WHERE phonenumber = ?";
   try {
     // Use promisePool.query instead of connection.promise().query
@@ -100,25 +128,49 @@ const postCheckCustomer = async (req, res) => {
         res.redirect("/admin/");
       }
     } else {
-      const [rows] = await connection.query(sql, [phone]);
-      console.log(rows);
-      if (rows.length <= 0) {
-        res.redirect("/index?error=invalid");
-        return;
-      }
-      let customer = rows[0];
-      let pass_fromdb = customer.password;
-      let customer_id = customer.customer_id;
-      // Sử dụng bcrypt để so sánh mật khẩu nhập vào với mật khẩu đã băm trong cơ sở dữ liệu
-      const bcrypt = require("bcrypt");
-      const match = password == pass_fromdb ? true : false;
-      console.log(match);
-      if (match) {
-        console.log("OK");
-        res.redirect(`/home/${customer_id}`);
+      const [Shipperrows] = await connection.query(Shippersql, [phone]);
+      if (Shipperrows.length > 0) {
+        const [rows] = await connection.query(Shippersql, [phone]);
+        console.log(rows);
+        if (rows.length <= 0) {
+          res.redirect("/index?error=invalid");
+          return;
+        }
+        let shipper = rows[0];
+        let pass_fromdb = shipper.password;
+        let shipper_id = shipper.shipper_id;
+        // Sử dụng bcrypt để so sánh mật khẩu nhập vào với mật khẩu đã băm trong cơ sở dữ liệu
+        const bcrypt = require("bcrypt");
+        const match = password == pass_fromdb ? true : false;
+        console.log(match);
+        if (match) {
+          console.log("OK");
+          res.redirect(`/shipper/${shipper_id}`);
+        } else {
+          console.log("Not OK");
+          res.redirect("/index?error=invalid1");
+        }
       } else {
-        console.log("Not OK");
-        res.redirect("/index?error=invalid1");
+        const [rows] = await connection.query(sql, [phone]);
+        console.log(rows);
+        if (rows.length <= 0) {
+          res.redirect("/index?error=invalid");
+          return;
+        }
+        let customer = rows[0];
+        let pass_fromdb = customer.password;
+        let customer_id = customer.customer_id;
+        // Sử dụng bcrypt để so sánh mật khẩu nhập vào với mật khẩu đã băm trong cơ sở dữ liệu
+        const bcrypt = require("bcrypt");
+        const match = password == pass_fromdb ? true : false;
+        console.log(match);
+        if (match) {
+          console.log("OK");
+          res.redirect(`/home/${customer_id}`);
+        } else {
+          console.log("Not OK");
+          res.redirect("/index?error=invalid1");
+        }
       }
     }
   } catch (err) {
@@ -205,6 +257,69 @@ const postUpdateFood = async (req, res) => {
   await updateFoodById(foodId, status);
   res.redirect("/adminfood");
 };
+const postCreateOrder = async (req, res) => {
+  const {
+    customer_id,
+    food_id,
+    customer_name,
+    phone_number,
+    address,
+    food_name,
+    food_price,
+    quantity,
+    total_price,
+    order_date,
+    order_time,
+    notes,
+  } = req.body;
+
+  // Lưu dữ liệu vào bảng `Order`
+  const sql = `
+    INSERT INTO Orders (customer_id, food_id, quantity, total_price, address, order_date, order_time, notes)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+  `;
+  let [results, fields] = await connection.query(sql, [
+    customer_id,
+    food_id,
+    quantity,
+    total_price,
+    address,
+    order_date,
+    order_time,
+    notes,
+  ]);
+  res.redirect(`/home/${customer_id}`);
+};
+const postAcceptOrder = async (req, res) => {
+  const { orderId, shipperId } = req.body;
+  const sql = `
+  UPDATE Orders
+  SET shipper_id = ?, status = 'Đang vận chuyển'
+  WHERE order_id = ?;
+  `;
+  let [results, fields] = await connection.query(sql, [shipperId, orderId]);
+  res.redirect(`/shipper/${shipperId}`);
+};
+const postCompleteOrder = async (req, res) => {
+  const { orderId, shipperId } = req.body;
+  const sql = `
+  UPDATE Orders
+  SET status = 'Đã vận chuyển'
+  WHERE order_id = ?;
+  `;
+  let [results, fields] = await connection.query(sql, [orderId]);
+  res.redirect(`/shipper/${shipperId}`);
+};
+const postCancelOrder = async (req, res) => {
+  const { orderId, shipperId } = req.body;
+  const sql = `
+  UPDATE Orders
+  SET status = 'Đã hủy'
+  WHERE order_id = ?;
+  `;
+  let [results, fields] = await connection.query(sql, [orderId]);
+  res.redirect(`/shipper/${shipperId}`);
+};
 // const getlogin
 module.exports = {
   getindex,
@@ -214,6 +329,7 @@ module.exports = {
   getAdminFood,
   getAdminShipper,
   getorder,
+  getshipper,
   postCheckCustomer,
   postCreateCustomer,
   postUpdateCustomer,
@@ -222,4 +338,8 @@ module.exports = {
   postUpdateShipper,
   postDeleteShipper,
   postUpdateFood,
+  postCreateOrder,
+  postAcceptOrder,
+  postCompleteOrder,
+  postCancelOrder,
 };
