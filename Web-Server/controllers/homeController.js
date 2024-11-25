@@ -107,6 +107,24 @@ const getshipper = async (req, res) => {
     ListShipperOrder: ShipperOrder,
   });
 };
+const gethistory = async (req, res) => {
+  let customer_id = req.params.id;
+  let sql = "SELECT * FROM Customer WHERE customer_id = ?";
+  const [rowss] = await connection.query(sql, [customer_id]);
+  customer_name = rowss[0].name;
+  let ordersql = `SELECT o.*, f.name AS food_name, f.price AS food_price, c.phonenumber AS customer_phone, c.name AS customer_name
+    FROM Orders o
+    JOIN Food f ON o.food_id = f.food_id
+    JOIN Customer c ON o.customer_id = c.customer_id
+    WHERE o.customer_id = ?`;
+  const [rows] = await connection.query(ordersql, [customer_id]);
+  let index = 1;
+  res.render("history", {
+    customer_name: customer_name,
+    listOrders: rows,
+    index: index,
+  });
+};
 const postCheckCustomer = async (req, res) => {
   let phone = req.body.phone;
   let password = req.body.password;
@@ -330,6 +348,7 @@ module.exports = {
   getAdminShipper,
   getorder,
   getshipper,
+  gethistory,
   postCheckCustomer,
   postCreateCustomer,
   postUpdateCustomer,

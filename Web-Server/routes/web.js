@@ -9,6 +9,7 @@ const {
   getAdminShipper,
   getorder,
   getshipper,
+  gethistory,
   postCheckCustomer,
   postCreateCustomer,
   postUpdateCustomer,
@@ -42,6 +43,8 @@ router.get("/admin-shipper", getAdminShipper);
 router.get("/order/:customer_id/:food_id", getorder);
 
 router.get("/shipper/:id", getshipper);
+
+router.get("/history/:id", gethistory);
 
 router.post("/check-customer", postCheckCustomer);
 
